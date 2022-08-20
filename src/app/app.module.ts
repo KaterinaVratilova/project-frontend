@@ -1,11 +1,13 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
-import { TranslateModule } from "@ngx-translate/core";
+import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
+import { LayoutsModule } from "./modules/layouts/layouts.module";
+import { AuthModule } from "./modules/auth/auth.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,9 +15,11 @@ import { AppComponent } from "./app.component";
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    LayoutsModule,
+    AuthModule,
     TranslateModule.forRoot({
       loader: {
-        provide: TranslateModule,
+        provide: TranslateLoader,
         useFactory: httpTranslateLoader,
         deps: [HttpClient],
       },

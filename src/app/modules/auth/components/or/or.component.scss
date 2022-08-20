@@ -1,0 +1,22 @@
+.or {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--neutral-90);
+  text-align: center;
+  background-color: var(--neutral-0);
+
+  span {
+    background-color: var(--neutral-0);
+    padding: 0 10px;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    margin-top: 10px;
+    margin-bottom: -9px;
+    border-bottom: 1px solid #eee;
+  }
+}

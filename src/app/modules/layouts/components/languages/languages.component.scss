@@ -1,0 +1,41 @@
+.language {
+  padding: 0 30px;
+  height: 70px;
+  background-color: var(--neutral-0);
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+
+  > img {
+    width: 105px;
+  }
+
+  > .change-language {
+    display: flex;
+    align-items: center;
+
+    div {
+      padding: 0 0.625rem;
+    }
+
+    span {
+      color: #777;
+    }
+
+    img {
+      height: 19px;
+      width: 28px;
+      border-radius: 4px;
+    }
+  }
+}
+
+@media (min-width: 1023px) {
+  .language {
+    justify-content: space-between;
+
+    > .change-language {
+      display: flex;
+    }
+  }
+}

@@ -1,3 +1,16 @@
 {
-  "createAcounnt": "Přidej účet"
+  "createAccount": "Přidej účet",
+  "OR": "NEBO",
+  "login": {
+    "username": "Uživatelské jméno nebo e-mail",
+    "password": "Heslo",
+    "signIn": "Přihlásit",
+    "signInButton": "Přihlásit",
+    "signInApple": "Spojte se s Apple",
+    "signInFacebook": "Spojte se s Facebook",
+    "signInGoogle": "Spojte se s Google",
+    "noAccount": "Nemáte účet?",
+    "signUp": "Zaregistrovat",
+    "staySignedIn": "Zůstat přihlášený/á"
+  }
 }

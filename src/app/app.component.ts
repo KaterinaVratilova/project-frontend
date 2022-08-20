@@ -1,10 +1,15 @@
-import { Component } from "@angular/core";
+import { ChangeDetectionStrategy, Component } from "@angular/core";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.scss"],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  title = "java04-final-project";
+  constructor(private translate: TranslateService) {
+    translate.addLangs(["en", "cs"]);
+    translate.setDefaultLang("cs");
+  }
 }

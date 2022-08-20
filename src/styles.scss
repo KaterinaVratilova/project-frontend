@@ -1,1 +1,71 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-100: #3fb923;
+  --primary-100-hover: #48c328;
+  --primary-110: #3dae23;
+  --primary-110-hover: #46ba28;
+  --primary-10: #e7f9ea;
+  --primary-10-hover: #f1fbf3;
+  --primary-100-dm: #adf68d;
+  --primary-100-dm-hover: #c1f8a9;
+  --primary-var-100: #e8464a;
+  --primary-var-100-hover: #f95e63;
+  --primary-var-110: #d0021b;
+  --primary-var-110-hover: #d7021f;
+  --primary-var-10: #f8e4e6;
+  --primary-var-10-hover: #fbeff1;
+  --primary-var-100-dm: #ff6a6a;
+  --primary-var-100-dm-hover: #ff9494;
+  --secondary-100: #2999f5;
+  --secondary-100-hover: #2fa8f6;
+  --secondary-100-dm: #80cdff;
+  --secondary-100-dm-hover: #9cd8ff;
+  --neutral-100: #2c2c2c;
+  --neutral-90: #777;
+  --neutral-70: #bababa;
+  --neutral-40: #ddd;
+  --neutral-20: #f1f1f1;
+  --neutral-10: #f7f7f7;
+  --neutral-0: #fff;
+  --neutral-100-dm: #fff;
+  --neutral-90-dm: #cacbd1;
+  --neutral-70-dm: #85899b;
+  --neutral-40-dm: #555b70;
+  --neutral-20-dm: #32374b;
+  --neutral-10-dm: #272b3a;
+  --neutral-0-dm: #181c27;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+app-root {
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  min-width: fit-content;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f1f1f1;
+}
+
+html,
+body,
+div,
+li,
+ul,
+a,
+span,
+input,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}

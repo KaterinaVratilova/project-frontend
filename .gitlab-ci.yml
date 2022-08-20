@@ -23,11 +23,11 @@ prettier:
   dependencies:
     - build
   script:
-    - npm run test:ci
+    - npm run prettier:check
 
 test:
   stage: test
   dependencies:
     - build
   script:
-    - npm run prettier:check
+    - npm run test:ci
