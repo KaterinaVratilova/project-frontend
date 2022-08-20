@@ -7,6 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "jest",
+    "test:ci": "jest --ci",
     "test:coverage": "jest --coverage",
     "prettier:check": "npx prettier --check src",
     "prettier:write": "npx prettier --write src"
@@ -44,7 +45,8 @@
     ],
     "testPathIgnorePatterns": [
       "<rootDir>/node_modules/",
-      "<rootDir>/dist/"
+      "<rootDir>/dist/",
+      "<rootDir>/src/test.ts"
     ],
     "globals": {
       "ts-jest": {

@@ -1,0 +1,33 @@
+image: node:latest
+
+stages:
+  - build
+  - prettier
+  - test
+
+build:
+  stage: build
+  script:
+    - npm install
+  cache:
+    paths:
+      - node_modules/
+  artifacts:
+    expire_in: 1 days
+    when: on_success
+    paths:
+      - node_modules/
+
+prettier:
+  stage: prettier
+  dependencies:
+    - build
+  script:
+    - npm run test:ci
+
+test:
+  stage: test
+  dependencies:
+    - build
+  script:
+    - npm run prettier:check
