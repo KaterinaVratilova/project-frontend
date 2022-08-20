@@ -1,3 +1,16 @@
 {
-  "createAcounnt": "Create an account"
+  "createAccount": "Create an account",
+  "or": "OR",
+  "login": {
+    "username": "Username or password",
+    "password": "Password",
+    "signIn": "Sign in",
+    "signInButton": "Sign in",
+    "signInApple": "Sign in with Apple",
+    "signInFacebook": "Sign in with Facebook",
+    "signInGoogle": "Sign in with Google",
+    "noAccount": "Don't have an account?",
+    "signUp": "Sign up",
+    "staySignedIn": "Stay Signed in"
+  }
 }
