@@ -9,6 +9,7 @@
     text-align: left;
     font-weight: 300;
     transition: 0.2s ease all;
+    pointer-events: none;
 
     position: absolute;
     left: 0;
@@ -35,7 +36,8 @@
     }
   }
 
-  input:focus ~ label {
+  input:focus ~ label,
+  input:valid ~ label {
     top: -20px;
     font-size: 12px;
   }
