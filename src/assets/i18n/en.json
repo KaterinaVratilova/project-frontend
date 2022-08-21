@@ -1,6 +1,8 @@
 {
-  "createAccount": "Create an account",
   "or": "OR",
+  "registerTitle": "Invest in stocks, crypto, and beyond. Copy other investors. Explore new opportunities.",
+  "registerHeader1": "Sign up,",
+  "registerHeader2": "it's free",
   "login": {
     "username": "Username or password",
     "password": "Password",
@@ -12,5 +14,29 @@
     "noAccount": "Don't have an account?",
     "signUp": "Sign up",
     "staySignedIn": "Stay Signed in"
+  },
+  "register": {
+    "createAccount1": "Create an account",
+    "createAccount2": "Create account",
+    "signUpFacebook": "Sign up with Facebook",
+    "signUpGoogle": "Sign up with Google",
+    "information1": "eToro is a multi-asset platform that offers both investing in stocks and digital assets, as well as trading CFDs.\n        By signing up you will receive marketing emails, which you may unsubscribe from anytime.",
+    "information2": "All trading involves risk. Only risk capital you're prepared to lose.",
+    "password": "Password",
+    "username": "Username",
+    "email": "Email",
+    "captcha1": "This site is protected by reCAPTCHA. Google ",
+    "captcha2": "Privacy Policy",
+    "captcha3": " and ",
+    "captcha4": "Terms of Service",
+    "captcha5": " apply.",
+    "acceptCondition1": "I accept the ",
+    "acceptCondition2": " Terms & Conditions",
+    "acceptCondition3": " of eToro Europe Ltd. (CySEC Regulated) and ",
+    "acceptCondition4": " Risk Disclosure",
+    "privacyPolicy1": "I acknowledge that my information will be used in accordance with the ",
+    "privacyPolicy2": "Privacy Policy",
+    "privacyPolicy3": " and ",
+    "privacyPolicy4": " Cookie Policy"
   }
 }

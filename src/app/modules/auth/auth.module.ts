@@ -6,9 +6,10 @@ import { LoginComponent } from "./pages/login/login.component";
 import { RegisterComponent } from "./pages/register/register.component";
 import { SharedModule } from "../shared/shared.module";
 import { OrComponent } from "./components/or/or.component";
+import { RegisterTitleComponent } from "./components/register-title/register-title.component";
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent, OrComponent],
+  declarations: [LoginComponent, RegisterComponent, OrComponent, RegisterTitleComponent],
   imports: [CommonModule, SharedModule, TranslateModule.forChild()],
 })
 export class AuthModule {}

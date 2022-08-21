@@ -1,4 +1,4 @@
-<header class="language">
+<header class="language" [ngClass]="{ 'hide-language': hideLanguage | async }">
   <img src="../../../../../assets/images/logo-green.png" alt="Logo" />
 
   <div class="change-language">

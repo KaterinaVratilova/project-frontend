@@ -1,24 +1,26 @@
-input {
-  width: 30px;
-  vertical-align: top;
-  z-index: 1;
-  position: relative;
-  height: 26px;
-  cursor: pointer;
-}
-
-label {
-  font-size: 14px;
-  color: #777;
-  display: inline-block;
-  position: static;
-  text-transform: none;
-  vertical-align: middle;
-  padding-left: 5px;
-}
-
 .form-group {
   margin: 15px 0;
   display: flex;
   align-items: center;
+
+  input {
+    vertical-align: top;
+    z-index: 1;
+    position: relative;
+    height: 26px;
+    width: 30px;
+    min-width: 30px;
+    cursor: pointer;
+    flex: 1;
+  }
+
+  label {
+    font-size: 14px;
+    color: var(--neutral-90);
+    display: inline-block;
+    position: static;
+    text-transform: none;
+    vertical-align: middle;
+    padding-left: 15px;
+  }
 }
