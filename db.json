@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "email": "tomas.svojanovsky11@gmail.com",
+      "password": "$2a$10$5Jfpy3ZxnztnGERMTZ01K.463u/7b2JWrgY9HprMJBrDH6EE0LYTu",
+      "username": "tomas",
+      "id": 1
+    },
+    {
+      "email": "josef.jozkac@gmail.com",
+      "password": "$2a$10$e4azaoO8Ws8GYMAT2ISiT.pVjVPmy0X48OffL02PPVjElDXEdval2",
+      "username": "Josef",
+      "id": 2
+    }
+  ]
+}

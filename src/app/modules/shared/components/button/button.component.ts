@@ -19,6 +19,8 @@ export class ButtonComponent {
 
   @Input() type: ButtonType = "button";
 
+  @Input() disabled = false;
+
   @Output() outClick = new EventEmitter<void>();
 
   get _mode() {
