@@ -10,10 +10,18 @@ import { RegisterTitleComponent } from "./components/register-title/register-tit
 import { ReactiveFormsModule } from "@angular/forms";
 import { AuthService } from "./services/auth.service";
 import { HttpClientModule } from "@angular/common/http";
+import { RouterModule } from "@angular/router";
 
 @NgModule({
   declarations: [LoginComponent, RegisterComponent, OrComponent, RegisterTitleComponent],
-  imports: [CommonModule, SharedModule, TranslateModule.forChild(), ReactiveFormsModule, HttpClientModule],
+  imports: [
+    CommonModule,
+    SharedModule,
+    TranslateModule.forChild(),
+    ReactiveFormsModule,
+    HttpClientModule,
+    RouterModule,
+  ],
   providers: [AuthService],
 })
 export class AuthModule {}
