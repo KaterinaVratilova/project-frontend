@@ -1,1 +1,66 @@
-<p>register works!</p>
+<div class="register">
+  <div class="create-account">
+    {{ "register.createAccount1" | translate }}
+  </div>
+
+  <form class="column">
+    <app-register-title></app-register-title>
+
+    <div class="button-group">
+      <app-button mode="transparent">
+        <div>
+          <img src="assets/images/social/google-full-icon.svg" alt="Apple" />
+          <span>{{ "register.signUpFacebook" | translate }}</span>
+        </div>
+      </app-button>
+      <app-button mode="transparent">
+        <div>
+          <img src="assets/images/social/facebook-full-icon.svg" alt="Facebook" />
+          <span>{{ "register.signUpGoogle" | translate }}</span>
+        </div>
+      </app-button>
+    </div>
+
+    <app-or></app-or>
+
+    <div class="input-group">
+      <app-input [placeholder]="'register.username' | translate"></app-input>
+      <app-input [placeholder]="'register.email' | translate"></app-input>
+      <app-input [placeholder]="'register.password' | translate"></app-input>
+    </div>
+
+    <div class="checkbox-group">
+      <app-checkbox>
+        <span>{{ "register.acceptCondition1" | translate }}</span>
+        <a *ngIf="'register.acceptCondition2' | translate as text" href="#">{{ text }}</a>
+        <span>{{ "register.acceptCondition3" | translate }}</span>
+        <a href="#">{{ "register.acceptCondition4" | translate }}</a>
+      </app-checkbox>
+      <app-checkbox>
+        <span>{{ "register.privacyPolicy1" | translate }}</span>
+        <a href="#">{{ "register.privacyPolicy2" | translate }}</a>
+        <span>{{ "register.privacyPolicy3" | translate }}</span>
+        <a href="#">{{ "register.privacyPolicy4" | translate }}</a>
+      </app-checkbox>
+    </div>
+
+    <div class="captcha">
+      <span>{{ "register.captcha1" | translate }}</span>
+      <a href="#">{{ "register.captcha2" | translate }}</a>
+      <span>{{ "register.captcha3" | translate }}</span>
+      <a href="#">{{ "register.captcha4" | translate }}</a>
+      <span>{{ "register.captcha5" | translate }}</span>
+    </div>
+
+    <app-button mode="secondary">{{ "register.createAccount2" | translate }}</app-button>
+
+    <div class="information">
+      <div>{{ "register.information1" | translate }}</div>
+      <div>{{ "register.information2" | translate }}</div>
+    </div>
+  </form>
+
+  <div class="picture">
+    <img src="assets/images/background-1.svg" alt="Background" />
+  </div>
+</div>

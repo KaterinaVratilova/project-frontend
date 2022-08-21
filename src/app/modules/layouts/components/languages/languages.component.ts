@@ -1,4 +1,8 @@
 import { ChangeDetectionStrategy, Component } from "@angular/core";
+import { Store } from "@ngrx/store";
+
+import { AppState } from "../../../../app.module";
+import { selectHideLanguage } from "../../store/selectors";
 
 @Component({
   selector: "app-languages",
@@ -6,4 +10,8 @@ import { ChangeDetectionStrategy, Component } from "@angular/core";
   styleUrls: ["./languages.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LanguagesComponent {}
+export class LanguagesComponent {
+  hideLanguage = this.store.select(selectHideLanguage);
+
+  constructor(private store: Store<AppState>) {}
+}

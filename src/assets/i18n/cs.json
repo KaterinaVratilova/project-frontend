@@ -1,6 +1,8 @@
 {
-  "createAccount": "Přidej účet",
   "OR": "NEBO",
+  "registerTitle": "Investujte do akcií, kryptoměn a dalších. Kopírujte ostatní investory. Prozkoumejte nové příležitosti.",
+  "registerHeader1": "Zaregistrujte se,",
+  "registerHeader2": "je to zdarma",
   "login": {
     "username": "Uživatelské jméno nebo e-mail",
     "password": "Heslo",
@@ -12,5 +14,29 @@
     "noAccount": "Nemáte účet?",
     "signUp": "Zaregistrovat",
     "staySignedIn": "Zůstat přihlášený/á"
+  },
+  "register": {
+    "createAccount1": "Vytvořit účet",
+    "createAccount2": " Založit účet",
+    "signUpFacebook": "Spojte se s Google",
+    "signUpGoogle": "Spojte se s Facebook",
+    "information1": "Po registraci budete dostávat marketingové e-maily, které můžete kdykoli odhlásit.",
+    "information2": "Každé obchodování zahrnuje rizika. Riskujte pouze kapitál, který můžete postrádat.",
+    "password": "Heslo",
+    "username": "Uživatelské jméno",
+    "email": "Email",
+    "captcha1": "Tato stránka je chráněna službou reCAPTCHA. Platí ",
+    "captcha2": "Zásady ochrany osobních údajů",
+    "captcha3": " a ",
+    "captcha4": "Podmínky poskytování služeb Google.",
+    "captcha5": "",
+    "acceptCondition1": "Přijímám ",
+    "acceptCondition2": " eToro Europe Ltd. (regulované CySEC) a ",
+    "acceptCondition3": "",
+    "acceptCondition4": "Oznámení o rizikových faktorech",
+    "privacyPolicy1": "Souhlasím s tím, že mé informace budou použity v souladu s ",
+    "privacyPolicy2": "Zásady ochrany a zveřejňování osobních údajů",
+    "privacyPolicy3": " a ",
+    "privacyPolicy4": "Zásady pro práci s cookies"
   }
 }

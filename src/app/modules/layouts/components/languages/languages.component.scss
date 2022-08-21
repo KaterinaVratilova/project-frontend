@@ -6,6 +6,14 @@
   justify-content: space-between;
   display: flex;
 
+  &.hide-language {
+    justify-content: center;
+
+    .change-language {
+      display: none;
+    }
+  }
+
   > img {
     width: 105px;
   }
@@ -33,6 +41,10 @@
 @media (min-width: 1023px) {
   .language {
     justify-content: space-between;
+
+    &.hide-language {
+      justify-content: space-between;
+    }
 
     > .change-language {
       display: flex;
