@@ -1,68 +1,81 @@
 <div class="register">
-  <div class="create-account">
-    {{ "register.createAccount1" | translate }}
+  <div class="column">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="create-account">
+        {{ "register.createAccount1" | translate }}
+      </div>
+
+      <app-register-title></app-register-title>
+
+      <div class="button-group">
+        <app-button mode="transparent">
+          <div>
+            <img src="assets/images/social/google-full-icon.svg" alt="Apple" />
+            <span class="long">{{ "register.signUpFacebook" | translate }}</span>
+            <span class="short">{{ "register.signUpFacebookShort" | translate }}</span>
+          </div>
+        </app-button>
+        <app-button mode="transparent">
+          <div>
+            <img src="assets/images/social/facebook-full-icon.svg" alt="Facebook" />
+            <span class="long">{{ "register.signUpGoogle" | translate }}</span>
+            <span class="short">{{ "register.signUpGoogleShort" | translate }}</span>
+          </div>
+        </app-button>
+      </div>
+
+      <app-or></app-or>
+
+      <div class="input-group">
+        <app-input [formControl]="username" [placeholder]="'register.username' | translate"></app-input>
+        <app-input [formControl]="email" [placeholder]="'register.email' | translate"></app-input>
+        <app-input [formControl]="password" [placeholder]="'register.password' | translate"></app-input>
+      </div>
+
+      <div class="checkbox-group">
+        <app-checkbox>
+          <span>{{ "register.acceptCondition1" | translate }}</span>
+          <a *ngIf="'register.acceptCondition2' | translate as text" href="#">{{ text }}</a>
+          <span>{{ "register.acceptCondition3" | translate }}</span>
+          <a href="#">{{ "register.acceptCondition4" | translate }}</a>
+        </app-checkbox>
+        <app-checkbox>
+          <span>{{ "register.privacyPolicy1" | translate }}</span>
+          <a href="#">{{ "register.privacyPolicy2" | translate }}</a>
+          <span>{{ "register.privacyPolicy3" | translate }}</span>
+          <a href="#">{{ "register.privacyPolicy4" | translate }}</a>
+        </app-checkbox>
+      </div>
+
+      <div class="captcha">
+        <span>{{ "register.captcha1" | translate }}</span>
+        <a href="#">{{ "register.captcha2" | translate }}</a>
+        <span>{{ "register.captcha3" | translate }}</span>
+        <a href="#">{{ "register.captcha4" | translate }}</a>
+        <span>{{ "register.captcha5" | translate }}</span>
+      </div>
+
+      <app-button mode="secondary" type="submit" [disabled]="form.invalid || (loading | async) || false">{{
+        "register.createAccount2" | translate
+      }}</app-button>
+
+      <div class="information">
+        <div>{{ "register.information1" | translate }}</div>
+        <div>{{ "register.information2" | translate }}</div>
+      </div>
+
+      <div class="sign-in">
+        <span>{{ "register.haveAccount" | translate }}</span>
+        <a routerLink="/login">{{ "register.signIn" | translate }}</a>
+      </div>
+    </form>
+
+    <div class="picture"></div>
   </div>
+</div>
 
-  <form class="column" [formGroup]="form" (ngSubmit)="onSubmit()">
-    <app-register-title></app-register-title>
+<div class="language">
+  <img src="assets/images/flags/uk-flag.svg" alt="" />
 
-    <div class="button-group">
-      <app-button mode="transparent">
-        <div>
-          <img src="assets/images/social/google-full-icon.svg" alt="Apple" />
-          <span>{{ "register.signUpFacebook" | translate }}</span>
-        </div>
-      </app-button>
-      <app-button mode="transparent">
-        <div>
-          <img src="assets/images/social/facebook-full-icon.svg" alt="Facebook" />
-          <span>{{ "register.signUpGoogle" | translate }}</span>
-        </div>
-      </app-button>
-    </div>
-
-    <app-or></app-or>
-
-    <div class="input-group">
-      <app-input [formControl]="username" [placeholder]="'register.username' | translate"></app-input>
-      <app-input [formControl]="email" [placeholder]="'register.email' | translate"></app-input>
-      <app-input [formControl]="password" [placeholder]="'register.password' | translate"></app-input>
-    </div>
-
-    <div class="checkbox-group">
-      <app-checkbox>
-        <span>{{ "register.acceptCondition1" | translate }}</span>
-        <a *ngIf="'register.acceptCondition2' | translate as text" href="#">{{ text }}</a>
-        <span>{{ "register.acceptCondition3" | translate }}</span>
-        <a href="#">{{ "register.acceptCondition4" | translate }}</a>
-      </app-checkbox>
-      <app-checkbox>
-        <span>{{ "register.privacyPolicy1" | translate }}</span>
-        <a href="#">{{ "register.privacyPolicy2" | translate }}</a>
-        <span>{{ "register.privacyPolicy3" | translate }}</span>
-        <a href="#">{{ "register.privacyPolicy4" | translate }}</a>
-      </app-checkbox>
-    </div>
-
-    <div class="captcha">
-      <span>{{ "register.captcha1" | translate }}</span>
-      <a href="#">{{ "register.captcha2" | translate }}</a>
-      <span>{{ "register.captcha3" | translate }}</span>
-      <a href="#">{{ "register.captcha4" | translate }}</a>
-      <span>{{ "register.captcha5" | translate }}</span>
-    </div>
-
-    <app-button mode="secondary" type="submit" [disabled]="form.invalid || (loading | async) || false">{{
-      "register.createAccount2" | translate
-    }}</app-button>
-
-    <div class="information">
-      <div>{{ "register.information1" | translate }}</div>
-      <div>{{ "register.information2" | translate }}</div>
-    </div>
-  </form>
-
-  <div class="picture">
-    <img src="assets/images/background-1.svg" alt="Background" />
-  </div>
+  <div>English</div>
 </div>

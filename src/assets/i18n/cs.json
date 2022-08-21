@@ -1,7 +1,7 @@
 {
   "OR": "NEBO",
   "registerTitle": "Investujte do akcií, kryptoměn a dalších. Kopírujte ostatní investory. Prozkoumejte nové příležitosti.",
-  "registerHeader1": "Zaregistrujte se,",
+  "registerHeader1": "Zaregistrujte se, ",
   "registerHeader2": "je to zdarma",
   "login": {
     "username": "Uživatelské jméno nebo e-mail",
@@ -18,8 +18,10 @@
   "register": {
     "createAccount1": "Vytvořit účet",
     "createAccount2": " Založit účet",
-    "signUpFacebook": "Spojte se s Google",
-    "signUpGoogle": "Spojte se s Facebook",
+    "signUpFacebook": "Spojte se s Facebook",
+    "signUpFacebookShort": "Facebook",
+    "signUpGoogle": "Spojte se s Google",
+    "signUpGoogleShort": "Google",
     "information1": "Po registraci budete dostávat marketingové e-maily, které můžete kdykoli odhlásit.",
     "information2": "Každé obchodování zahrnuje rizika. Riskujte pouze kapitál, který můžete postrádat.",
     "password": "Heslo",
@@ -37,6 +39,8 @@
     "privacyPolicy1": "Souhlasím s tím, že mé informace budou použity v souladu s ",
     "privacyPolicy2": "Zásady ochrany a zveřejňování osobních údajů",
     "privacyPolicy3": " a ",
-    "privacyPolicy4": "Zásady pro práci s cookies"
+    "privacyPolicy4": "Zásady pro práci s cookies",
+    "haveAccount": "Máte účet? ",
+    "signIn": "Přihlásit"
   }
 }

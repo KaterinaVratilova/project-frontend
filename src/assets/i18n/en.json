@@ -1,7 +1,7 @@
 {
   "or": "OR",
   "registerTitle": "Invest in stocks, crypto, and beyond. Copy other investors. Explore new opportunities.",
-  "registerHeader1": "Sign up,",
+  "registerHeader1": "Sign up, ",
   "registerHeader2": "it's free",
   "login": {
     "username": "Username or password",
@@ -19,7 +19,9 @@
     "createAccount1": "Create an account",
     "createAccount2": "Create account",
     "signUpFacebook": "Sign up with Facebook",
+    "signUpFacebookShort": "Facebook",
     "signUpGoogle": "Sign up with Google",
+    "signUpGoogleShort": "Google",
     "information1": "eToro is a multi-asset platform that offers both investing in stocks and digital assets, as well as trading CFDs.\n        By signing up you will receive marketing emails, which you may unsubscribe from anytime.",
     "information2": "All trading involves risk. Only risk capital you're prepared to lose.",
     "password": "Password",
@@ -37,6 +39,8 @@
     "privacyPolicy1": "I acknowledge that my information will be used in accordance with the ",
     "privacyPolicy2": "Privacy Policy",
     "privacyPolicy3": " and ",
-    "privacyPolicy4": " Cookie Policy"
+    "privacyPolicy4": " Cookie Policy",
+    "haveAccount": "Have an account?",
+    "signIN": "Sign In"
   }
 }
