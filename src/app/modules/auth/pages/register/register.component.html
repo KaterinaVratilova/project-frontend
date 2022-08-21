@@ -3,7 +3,7 @@
     {{ "register.createAccount1" | translate }}
   </div>
 
-  <form class="column">
+  <form class="column" [formGroup]="form" (ngSubmit)="onSubmit()">
     <app-register-title></app-register-title>
 
     <div class="button-group">
@@ -24,9 +24,9 @@
     <app-or></app-or>
 
     <div class="input-group">
-      <app-input [placeholder]="'register.username' | translate"></app-input>
-      <app-input [placeholder]="'register.email' | translate"></app-input>
-      <app-input [placeholder]="'register.password' | translate"></app-input>
+      <app-input [formControl]="username" [placeholder]="'register.username' | translate"></app-input>
+      <app-input [formControl]="email" [placeholder]="'register.email' | translate"></app-input>
+      <app-input [formControl]="password" [placeholder]="'register.password' | translate"></app-input>
     </div>
 
     <div class="checkbox-group">
@@ -52,7 +52,9 @@
       <span>{{ "register.captcha5" | translate }}</span>
     </div>
 
-    <app-button mode="secondary">{{ "register.createAccount2" | translate }}</app-button>
+    <app-button mode="secondary" type="submit" [disabled]="form.invalid || (loading | async) || false">{{
+      "register.createAccount2" | translate
+    }}</app-button>
 
     <div class="information">
       <div>{{ "register.information1" | translate }}</div>

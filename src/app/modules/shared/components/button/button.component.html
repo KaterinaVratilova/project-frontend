@@ -1,3 +1,9 @@
-<button [class]="_mode" [ngClass]="{ 'btn-rounded-light': rounded === 'light' }" [type]="type" (click)="onClick()">
+<button
+  [class]="_mode"
+  [ngClass]="{ 'btn-rounded-light': rounded === 'light' }"
+  [type]="type"
+  [disabled]="disabled"
+  (click)="onClick()"
+>
   <ng-content></ng-content>
 </button>

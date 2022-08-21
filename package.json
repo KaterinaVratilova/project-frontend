@@ -10,7 +10,9 @@
     "test:ci": "jest --ci",
     "test:coverage": "jest --coverage",
     "prettier:check": "npx prettier --check src",
-    "prettier:write": "npx prettier --write src"
+    "prettier:write": "npx prettier --write src",
+    "server": "json-server --watch db.json -m ./node_modules/json-server-auth",
+    "both": "concurrently \"npm:start\" \"npm:server\""
   },
   "private": true,
   "dependencies": {
@@ -26,6 +28,7 @@
     "@ngrx/store": "^14.2.0",
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
+    "concurrently": "^7.3.0",
     "json-server": "^0.17.0",
     "json-server-auth": "^2.1.0",
     "rxjs": "~7.5.0",

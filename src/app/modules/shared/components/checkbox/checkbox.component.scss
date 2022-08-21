@@ -24,3 +24,11 @@
     padding-left: 15px;
   }
 }
+
+@media (min-width: 1023px) {
+  .form-group {
+    input {
+      flex: 0;
+    }
+  }
+}
