@@ -1,0 +1,8 @@
+<div class="top" [ngClass]="{ expand: open }">
+  <img *ngIf="open" src="/assets/images/logo.svg" alt="Logo" />
+
+  <span *ngIf="open; else forward" class="material-symbols-outlined" (click)="toggle()"> arrow_back </span>
+  <ng-template #forward>
+    <span class="material-symbols-outlined" (click)="toggle()"> arrow_forward </span>
+  </ng-template>
+</div>

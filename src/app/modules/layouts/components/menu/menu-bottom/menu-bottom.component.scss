@@ -1,0 +1,16 @@
+.nav-bottom {
+  flex: 0 0 auto;
+  min-height: 74px;
+  padding: 0 30px;
+  display: none;
+
+  > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 28px 0;
+    font-size: 16px;
+    color: #84bdff;
+    text-decoration: none;
+  }
+}

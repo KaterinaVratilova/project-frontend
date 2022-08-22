@@ -13,6 +13,9 @@ import { AuthModule } from "./modules/auth/auth.module";
 import { layoutsReducer, LayoutsState } from "./modules/layouts/store/reducer";
 import { authReducer, AuthState } from "./modules/auth/store/reducer";
 import { AuthEffect } from "./modules/auth/store/effects";
+import { HomeModule } from "./modules/home/home.module";
+import { WatchlistModule } from "./modules/watchlist/watchlist.module";
+import { DiscoverModule } from "./modules/discover/discover.module";
 
 export type AppState = {
   layouts: LayoutsState;
@@ -27,6 +30,9 @@ export type AppState = {
     HttpClientModule,
     LayoutsModule,
     AuthModule,
+    HomeModule,
+    WatchlistModule,
+    DiscoverModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

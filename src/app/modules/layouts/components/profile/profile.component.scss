@@ -1,0 +1,38 @@
+.profile {
+  display: flex;
+  align-items: center;
+  padding: 25px 0;
+  justify-content: center;
+
+  img {
+    height: 50px;
+    transform: scale(0.7);
+  }
+
+  &.expand {
+    padding: 25px 30px;
+    justify-content: flex-start;
+
+    img {
+      margin-right: 15px;
+      transform: scale(1);
+    }
+  }
+
+  > div {
+    display: flex;
+    flex-flow: column wrap;
+    line-height: 24px;
+  }
+
+  span {
+    font-size: 18px;
+  }
+
+  a {
+    font-weight: 200;
+    color: #84bdff;
+    text-decoration: none;
+    font-size: 14px;
+  }
+}
