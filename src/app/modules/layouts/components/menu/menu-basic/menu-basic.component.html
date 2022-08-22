@@ -1,0 +1,30 @@
+<aside [ngClass]="{ expand: open }">
+  <app-menu-top (outOpen)="onToggle($event)" [open]="open"></app-menu-top>
+
+  <nav class="nav-mid">
+    <app-profile [open]="open"></app-profile>
+
+    <ul>
+      <li *ngFor="let item of items">
+        <a [routerLink]="item.url" [ngClass]="{ active: item.active }">
+          <span class="icon material-symbols-outlined">
+            {{ item.icon }}
+          </span>
+          <span *ngIf="open">{{ item.label }}</span>
+        </a>
+      </li>
+    </ul>
+
+    <ul *ngIf="!open" class="settings">
+      <li>
+        <a href="#">
+          <span class="material-symbols-outlined"> settings </span>
+        </a>
+      </li>
+    </ul>
+
+    <app-menu-complementary *ngIf="open"></app-menu-complementary>
+  </nav>
+
+  <app-menu-bottom *ngIf="open"></app-menu-bottom>
+</aside>

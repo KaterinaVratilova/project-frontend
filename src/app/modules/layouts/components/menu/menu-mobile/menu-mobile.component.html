@@ -1,0 +1,12 @@
+<div class="navigation-mobile">
+  <ul>
+    <li *ngFor="let item of items">
+      <a [routerLink]="item.url" [ngClass]="{ active: item.active }">
+        <div class="material-symbols-outlined">
+          {{ item.icon }}
+        </div>
+        <div>{{ item.label }}</div>
+      </a>
+    </li>
+  </ul>
+</div>

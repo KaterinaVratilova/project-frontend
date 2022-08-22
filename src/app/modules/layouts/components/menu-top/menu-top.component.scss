@@ -1,0 +1,25 @@
+:host {
+  width: 100%;
+}
+
+.top {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  height: 71px;
+
+  &.expand {
+    padding: 0 30px;
+    justify-content: space-between;
+  }
+
+  img {
+    height: 32px;
+  }
+
+  span {
+    font-size: 30px;
+    cursor: pointer;
+  }
+}

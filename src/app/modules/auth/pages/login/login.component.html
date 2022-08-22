@@ -1,7 +1,7 @@
 <div class="login">
-  <div class="header">{{ "login.signIn" | translate }}</div>
-
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="header">{{ "login.signIn" | translate }}</div>
+
     <div class="input-group">
       <app-input [formControl]="username" [placeholder]="'login.username' | translate"></app-input>
       <app-input [formControl]="password" [placeholder]="'login.password' | translate"></app-input>
@@ -12,33 +12,33 @@
     <app-button rounded="light" type="submit" [disabled]="form.invalid">{{
       "login.signInButton" | translate
     }}</app-button>
+
+    <app-or></app-or>
+
+    <div class="social-buttons">
+      <app-button mode="transparent">
+        <div>
+          <img src="assets/images/social/apple-full-icon.svg" alt="Apple" />
+          <span>{{ "login.signInApple" | translate }}</span>
+        </div>
+      </app-button>
+      <app-button mode="transparent">
+        <div>
+          <img src="assets/images/social/facebook-full-icon.svg" alt="Apple" />
+          <span>{{ "login.signInFacebook" | translate }}</span>
+        </div>
+      </app-button>
+      <app-button mode="transparent">
+        <div>
+          <img src="assets/images/social/google-full-icon.svg" alt="Apple" />
+          <span>{{ "login.signInGoogle" | translate }}</span>
+        </div>
+      </app-button>
+    </div>
+
+    <div class="sign-up">
+      {{ "login.noAccount" | translate }}
+      <a [routerLink]="['/register']">{{ "login.signUp" | translate }}</a>
+    </div>
   </form>
-
-  <app-or></app-or>
-
-  <div class="social-buttons">
-    <app-button mode="transparent">
-      <div>
-        <img src="assets/images/social/apple-full-icon.svg" alt="Apple" />
-        <span>{{ "login.signInApple" | translate }}</span>
-      </div>
-    </app-button>
-    <app-button mode="transparent">
-      <div>
-        <img src="assets/images/social/facebook-full-icon.svg" alt="Apple" />
-        <span>{{ "login.signInFacebook" | translate }}</span>
-      </div>
-    </app-button>
-    <app-button mode="transparent">
-      <div>
-        <img src="assets/images/social/google-full-icon.svg" alt="Apple" />
-        <span>{{ "login.signInGoogle" | translate }}</span>
-      </div>
-    </app-button>
-  </div>
-
-  <div class="sign-up">
-    {{ "login.noAccount" | translate }}
-    <a [routerLink]="['/register']">{{ "login.signUp" | translate }}</a>
-  </div>
 </div>
