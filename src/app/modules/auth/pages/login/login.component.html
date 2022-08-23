@@ -4,7 +4,7 @@
 
     <div class="input-group">
       <app-input [formControl]="username" [placeholder]="'login.username' | translate"></app-input>
-      <app-input [formControl]="password" [placeholder]="'login.password' | translate"></app-input>
+      <app-input type="password" [formControl]="password" [placeholder]="'login.password' | translate"></app-input>
     </div>
 
     <app-checkbox>{{ "login.staySignedIn" | translate }}</app-checkbox>
