@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component, forwardRef, Input } from "@angular/core";
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 
+export type InputType = "text" | "password" | "email";
+
 @Component({
   selector: "app-input",
   templateUrl: "./input.component.html",
@@ -19,7 +21,7 @@ export class InputComponent implements ControlValueAccessor {
 
   @Input() id: string = "";
 
-  @Input() type: string = "";
+  @Input() type: InputType = "text";
 
   @Input() label: string = "";
 

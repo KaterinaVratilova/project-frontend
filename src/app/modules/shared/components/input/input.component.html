@@ -1,4 +1,4 @@
 <div class="input-wrapper">
-  <input type="text" [value]="_value" (keyup)="onChangeValue($event)" required />
+  <input [type]="type" [value]="_value" (keyup)="onChangeValue($event)" required />
   <label>{{ placeholder }}</label>
 </div>
