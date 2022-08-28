@@ -6,6 +6,9 @@ import { RegisterComponent } from "./modules/auth/pages/register/register.compon
 import { LoginComponent } from "./modules/auth/pages/login/login.component";
 import { AuthLayoutComponent } from "./modules/layouts/components/auth-layout/auth-layout.component";
 import { PortfolioComponent } from "./modules/portfolio/pages/portfolio/portfolio.component";
+import { WatchlistComponent } from "./modules/watchlist/pages/watchlist/watchlist.component";
+import { HomeComponent } from "./modules/home/pages/home/home.component";
+import { DiscoverComponent } from "./modules/discover/pages/discover/discover.component";
 
 const routes: Routes = [
   {
@@ -20,6 +23,18 @@ const routes: Routes = [
       {
         path: "portfolio",
         component: PortfolioComponent,
+      },
+      {
+        path: "watchlist",
+        component: WatchlistComponent,
+      },
+      {
+        path: "home",
+        component: HomeComponent,
+      },
+      {
+        path: "discover",
+        component: DiscoverComponent,
       },
     ],
   },
