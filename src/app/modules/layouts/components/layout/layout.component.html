@@ -1,5 +1,7 @@
 <div class="container">
-  <app-languages></app-languages>
+  <app-languages (outOpenModal)="onOpenModal()"></app-languages>
 
   <router-outlet></router-outlet>
+
+  <app-language-modal (outCloseModal)="onCloseModal()"></app-language-modal>
 </div>

@@ -1,0 +1,44 @@
+.language-modal {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+
+  .title {
+    display: inline-block;
+    font-size: 34px;
+    letter-spacing: -1px;
+    font-weight: 400;
+
+    &::after {
+      display: block;
+      content: "";
+      width: 50px;
+      height: 3px;
+      background: #6eaf0f;
+      margin: 30px auto;
+    }
+  }
+
+  .list {
+    padding-top: 30px;
+
+    ul {
+      column-count: 3;
+    }
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    pointer-events: all;
+
+    img {
+      margin-right: 1.125rem;
+      display: inline-block;
+      height: 19px;
+      width: 28px;
+    }
+  }
+}
