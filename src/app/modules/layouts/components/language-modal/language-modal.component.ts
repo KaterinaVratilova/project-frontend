@@ -19,12 +19,19 @@ export class LanguageModalComponent {
       label: "English",
       value: "en",
     },
+    {
+      imgUrl: "assets/images/flags/czech-flag.svg",
+      label: "Czech",
+      value: "cs",
+    },
   ];
 
   @Output() outCloseModal = new EventEmitter<void>();
 
+  @Output() outChangeLanguage = new EventEmitter<string>();
+
   onLanguageChange(value: string) {
-    console.log(value);
+    this.outChangeLanguage.emit(value);
   }
 
   onCloseModal() {

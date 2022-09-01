@@ -2,11 +2,12 @@
   <img src="../../../../../assets/images/logo-green.png" alt="Logo" />
 
   <div class="change-language">
-    <img src="assets/images/flags/uk-flag.svg" alt="" />
+    <img *ngIf="language === 'en'" src="assets/images/flags/uk-flag.svg" alt="" />
+    <img *ngIf="language === 'cs'" src="assets/images/flags/czech-flag.svg" alt="" />
 
     <div (click)="onOpenModal()">
-      <div>English</div>
-      <span class="material-symbols-outlined"> expand_more </span>
+      <div>{{ languages[language] || "" }}</div>
+      <span class="material-symbols-outlined">expand_more</span>
     </div>
   </div>
 </header>
