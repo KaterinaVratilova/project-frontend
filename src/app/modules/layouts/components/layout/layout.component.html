@@ -1,5 +1,11 @@
 <div class="container">
-  <app-languages></app-languages>
+  <app-languages [language]="language" (outOpenModal)="onOpenModal()"></app-languages>
 
   <router-outlet></router-outlet>
+
+  <app-language-modal
+    *ngIf="modalOpen"
+    (outCloseModal)="onCloseModal()"
+    (outChangeLanguage)="onChangeLanguage($event)"
+  ></app-language-modal>
 </div>

@@ -19,11 +19,17 @@
   }
 
   > .change-language {
+    cursor: pointer;
     display: flex;
     align-items: center;
 
-    div {
-      padding: 0 0.625rem;
+    > div {
+      display: flex;
+      align-items: center;
+
+      div {
+        padding: 0 0.625rem;
+      }
     }
 
     span {
