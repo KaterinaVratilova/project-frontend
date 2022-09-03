@@ -1,0 +1,123 @@
+.container {
+  display: flex;
+  justify-content: center;
+
+  > .content {
+    display: grid;
+    grid-gap: 0.9375rem;
+    grid-template-columns: repeat(2, minmax(300px, 344px));
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas:
+      "area1 area1"
+      "area2 area3"
+      "area4 area5"
+      "area6 area7"
+      "area8 area8";
+
+    padding: 0 24px;
+    margin: 3rem auto 0;
+    max-width: 1044px;
+  }
+
+  img {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+.profile {
+  grid-area: area1;
+  max-height: 6.875rem;
+  background-color: #fff;
+  padding: 1.875rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  > div {
+    &:first-child {
+      display: flex;
+    }
+
+    .name {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-left: 0.75rem;
+
+      > div {
+        font-size: 1rem;
+        letter-spacing: -0.3px;
+
+        &:first-child {
+          color: #2c2c2c;
+          font-weight: 600;
+        }
+
+        &:last-child {
+          color: #bababa;
+        }
+      }
+    }
+  }
+}
+
+.card-1 {
+  grid-area: area1;
+}
+
+.card-2 {
+  grid-area: area2;
+}
+
+.card-3 {
+  grid-area: area3;
+}
+
+.card-4 {
+  grid-area: area4;
+}
+
+.card-5 {
+  grid-area: area5;
+}
+
+.card-6 {
+  grid-area: area6;
+}
+
+.card-7 {
+  grid-area: area7;
+}
+
+.card-8 {
+  grid-area: area8;
+  font-size: 0.75rem;
+  letter-spacing: -0.2px;
+  display: block;
+  clear: both;
+  text-transform: uppercase;
+  color: #2c2c2c;
+  font-weight: 300;
+  text-align: center;
+  margin: 1.1875rem auto;
+}
+
+@media (min-width: 1023px) {
+  .container {
+    > .content {
+      padding: 0 24px;
+      margin: 3rem auto 0;
+      grid-template-columns: repeat(3, minmax(240px, 344px));
+      grid-gap: 0.9375rem;
+      justify-content: center;
+      grid-template-rows: repeat(4, auto);
+      grid-template-areas:
+        "area1 area1 area1"
+        "area2 area3 area4"
+        "area5 area6 area7"
+        "area8 area8 area8";
+    }
+  }
+}

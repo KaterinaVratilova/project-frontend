@@ -1,0 +1,78 @@
+.money-card {
+  background-color: #fff;
+  border-radius: 6px;
+
+  .top {
+    padding: 1.875rem;
+    border-bottom: 1px solid #ededed;
+
+    .virtual {
+      border: 0.5px solid rgba(29, 51, 71, 0.5);
+      color: #1d3347;
+      text-transform: uppercase;
+      margin-bottom: 1.875rem;
+      display: inline-block;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: -0.2px;
+      padding: 0.3em 1.5em;
+      border-radius: 1.1em;
+    }
+
+    .value {
+      color: #2999f5;
+      font-size: 2.82rem;
+      height: 56px;
+      letter-spacing: -2px;
+      margin-top: 0.5rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .title {
+      > div {
+        &:first-child {
+          font-size: 1.275rem;
+          letter-spacing: -0.35px;
+          font-weight: 700;
+          margin-bottom: 0.2rem;
+        }
+      }
+    }
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.875rem 0;
+
+    > div {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+
+      > span {
+        &:first-child {
+          letter-spacing: -0.35px;
+          line-height: 36px;
+        }
+
+        &:last-child {
+          color: #777;
+          line-height: 24px;
+          letter-spacing: -0.3px;
+        }
+      }
+
+      .amount {
+        font-size: 1.5rem;
+      }
+    }
+
+    .left,
+    .center {
+      border-right: 0.5px solid #ededed;
+    }
+  }
+}

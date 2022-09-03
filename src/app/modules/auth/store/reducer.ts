@@ -1,7 +1,7 @@
 import { createReducer, on } from "@ngrx/store";
 
 import { loginDone, loginError, loginInitialized, registerDone, registerError, registerInitialized } from "./actions";
-import { User } from "../services/auth.service";
+import { User } from "../types";
 
 export type AuthState = {
   loading: boolean;

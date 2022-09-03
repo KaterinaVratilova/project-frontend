@@ -12,7 +12,8 @@
     "prettier:check": "npx prettier --check src",
     "prettier:write": "npx prettier --write src",
     "server": "json-server --watch db.json -m ./node_modules/json-server-auth",
-    "both": "concurrently \"npm:start\" \"npm:server\""
+    "both": "concurrently \"npm:start\" \"npm:server\"",
+    "e2e:open": "npx cypress open"
   },
   "private": true,
   "dependencies": {

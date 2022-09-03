@@ -1,0 +1,28 @@
+<div class="new-feed">
+  <div class="top">
+    <div class="avatar">
+      <img src="assets/images/profile.jpeg" alt="" />
+    </div>
+
+    <app-button mode="transparent" textPosition="left" [border]="false" (outClick)="onOpenModal()">
+      What's on your mind?
+    </app-button>
+  </div>
+
+  <div class="bottom">
+    <div class="upload">
+      <span class="material-symbols-outlined"> attach_file </span>
+      <input accept="image/*" name="photo" type="file" value="" />
+    </div>
+  </div>
+
+  <app-feed-modal
+    *ngIf="modalOpen"
+    (outCloseModal)="onCloseModal()"
+    (outKeyDown)="onKeyDown($event)"
+    (outSubmit)="onSubmit()"
+    [maxCharacters]="maxCharacters"
+    [currentCharacters]="currentCharacters"
+    [valid]="valid"
+  ></app-feed-modal>
+</div>

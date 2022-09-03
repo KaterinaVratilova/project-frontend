@@ -1,0 +1,16 @@
+.news {
+  display: flex;
+  text-transform: capitalize;
+  padding: 0 10px;
+  color: #2c2c2c;
+  font-style: normal;
+  font-size: 1.25rem;
+  letter-spacing: -0.35px;
+  line-height: 70px;
+  align-items: center;
+  font-weight: bold;
+
+  > div {
+    display: flex;
+  }
+}

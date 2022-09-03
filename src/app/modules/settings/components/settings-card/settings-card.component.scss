@@ -1,0 +1,58 @@
+.card {
+  padding: 1.875rem;
+  border-radius: 6px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  color: #777;
+
+  > div {
+    &:last-child {
+      //display: flex;
+      //align-items: center;
+      //flex-direction: column;
+      //justify-content: flex-end;
+
+      .bottom {
+        display: flex;
+      }
+    }
+
+    span {
+      font-size: 36px;
+    }
+  }
+
+  .icon {
+    font-size: 1.75rem;
+    font-weight: 300;
+    color: #566675;
+  }
+
+  .label {
+    text-transform: uppercase;
+    margin-top: 1.75rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: -0.35px;
+    color: #777;
+  }
+
+  .description {
+    display: flex;
+    flex-direction: row;
+    height: 4rem;
+    margin-top: 0.5rem;
+
+    p {
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.4;
+      letter-spacing: -0.31px;
+      color: #777;
+      max-width: 85%;
+    }
+  }
+}

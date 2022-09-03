@@ -1,0 +1,24 @@
+.home {
+  margin-top: 30px;
+  max-width: 1060px;
+  margin-left: auto;
+  margin-right: auto;
+
+  .content {
+    display: flex;
+    gap: 1rem;
+
+    .main {
+      display: flex;
+      flex-flow: column wrap;
+    }
+
+    > div {
+      flex: 4;
+    }
+
+    aside {
+      flex: 2;
+    }
+  }
+}

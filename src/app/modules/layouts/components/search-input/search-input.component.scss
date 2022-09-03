@@ -1,0 +1,42 @@
+.input-wrapper {
+  width: 420px;
+  height: 40px;
+  border-radius: 6px;
+  margin-top: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  > span {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+  }
+}
+
+input {
+  border: none;
+  background-color: #f5f5f5;
+  color: #777;
+  font-size: 16px;
+  width: 380px;
+  height: 100%;
+  outline: 0;
+  letter-spacing: -0.35px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  -webkit-padding-start: 45px;
+  padding-inline-start: 45px;
+  -webkit-padding-end: 72px;
+  padding-inline-end: 72px;
+  box-sizing: border-box;
+  border-radius: 6px;
+  transition: width 0.35s;
+
+  &::placeholder {
+    color: #bbbbbb;
+  }
+}

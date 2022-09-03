@@ -31,7 +31,7 @@ export class MenuComplementaryComponent {
     {
       active: false,
       label: "Settings",
-      url: "#",
+      url: "/settings",
       icon: "settings",
     },
     {

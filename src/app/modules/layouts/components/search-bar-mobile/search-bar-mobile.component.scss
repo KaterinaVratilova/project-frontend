@@ -1,0 +1,54 @@
+:host {
+  width: 100%;
+  //flex: 0;
+}
+
+.top-bar {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  background-color: #fff;
+}
+
+.top {
+  height: 70px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  //min-height: 41px;
+  padding: 0 20px;
+
+  > span {
+    font-size: 32px;
+  }
+
+  > .money {
+    flex: 1;
+    text-align: center;
+
+    > div {
+      color: #2999f5;
+      font-size: 22px;
+      letter-spacing: -0.35px;
+
+      &:last-child {
+        font-size: 14px;
+        letter-spacing: -0.21px;
+        text-align: center;
+        color: #e1191d;
+      }
+    }
+  }
+}
+
+.bottom {
+  height: 60px;
+  box-shadow: 0 0 4px 0 rgb(0 0 0 / 8%);
+  padding: 0 10px 0 20px;
+}
+
+@media (min-width: 1023px) {
+  :host {
+    display: none;
+  }
+}
