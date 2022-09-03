@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Output } from "@angular/core";
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from "@angular/core";
 
 @Component({
   selector: "app-modal",
@@ -7,6 +7,10 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Output } from "@angul
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ModalComponent {
+  @Input() border = false;
+
+  @Input() width = 0;
+
   @Output() outCloseModal = new EventEmitter<void>();
 
   onCloseModal() {

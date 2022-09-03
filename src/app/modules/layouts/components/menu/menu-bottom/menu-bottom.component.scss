@@ -1,8 +1,12 @@
+:host {
+  width: 100%;
+  min-height: 74px;
+}
+
 .nav-bottom {
   flex: 0 0 auto;
   min-height: 74px;
   padding: 0 30px;
-  display: none;
 
   > a {
     display: flex;

@@ -1,6 +1,7 @@
 import { createAction, props } from "@ngrx/store";
 
-import { LoginRequest, LoginResponse, RegisterRequest } from "../services/auth.service";
+import { LoginRequest, RegisterRequest } from "../request";
+import { LoginResponse } from "../response";
 
 export enum AUTH_ACTION_TYPES {
   REGISTER_INITIALIZED = "AUTH/REGISTER_INITIALIZED",

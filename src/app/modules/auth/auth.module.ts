@@ -8,9 +8,10 @@ import { SharedModule } from "../shared/shared.module";
 import { OrComponent } from "./components/or/or.component";
 import { RegisterTitleComponent } from "./components/register-title/register-title.component";
 import { ReactiveFormsModule } from "@angular/forms";
-import { AuthService } from "./services/auth.service";
 import { HttpClientModule } from "@angular/common/http";
 import { RouterModule } from "@angular/router";
+import { LoginService } from "./services/login.service";
+import { RegisterService } from "./services/register.service";
 
 @NgModule({
   declarations: [LoginComponent, RegisterComponent, OrComponent, RegisterTitleComponent],
@@ -22,6 +23,6 @@ import { RouterModule } from "@angular/router";
     HttpClientModule,
     RouterModule,
   ],
-  providers: [AuthService],
+  providers: [LoginService, RegisterService],
 })
 export class AuthModule {}

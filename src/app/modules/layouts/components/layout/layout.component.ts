@@ -10,17 +10,21 @@ import { TranslateService } from "@ngx-translate/core";
 export class LayoutComponent {
   modalOpen = false;
 
+  language = this.translate.defaultLang;
+
   constructor(private translate: TranslateService) {}
 
   onChangeLanguage(value: string) {
-    console.log(value, this.translate);
+    this.language = value;
+    this.translate.use(value);
+    this.modalOpen = false;
   }
 
   onOpenModal() {
-    console.log(this.modalOpen);
+    this.modalOpen = true;
   }
 
   onCloseModal() {
-    console.log(this.modalOpen);
+    this.modalOpen = false;
   }
 }

@@ -1,0 +1,30 @@
+<app-modal (outCloseModal)="onCloseModal()" [border]="true" [width]="660">
+  <div class="new-feed">
+    <div class="title">Write a post</div>
+
+    <div class="top">
+      <div class="avatar">
+        <img src="assets/images/profile.jpeg" alt="" />
+      </div>
+
+      <textarea
+        (keyup)="onKeyDown($event)"
+        placeholder="Share your thoughts. Tag People with @ and Markets with $."
+      ></textarea>
+    </div>
+
+    <div class="counter" [ngClass]="{ valid: valid }">
+      <div>{{ currentCharacters }} / {{ maxCharacters }}</div>
+    </div>
+
+    <div class="bottom">
+      <div class="upload">
+        <span class="material-symbols-outlined"> attach_file </span>
+        <input accept="image/*" name="photo" type="file" value="" />
+        <span>Upload Photo</span>
+      </div>
+
+      <app-button size="small" [disabled]="!valid" (outClick)="onSubmit()">POST</app-button>
+    </div>
+  </div>
+</app-modal>

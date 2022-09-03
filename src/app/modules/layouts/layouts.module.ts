@@ -13,6 +13,9 @@ import { ProfileComponent } from "./components/profile/profile.component";
 import { MenuTopComponent } from "./components/menu-top/menu-top.component";
 import { SharedModule } from "../shared/shared.module";
 import { LanguageModalComponent } from "./components/language-modal/language-modal.component";
+import { SearchBarComponent } from "./components/search-bar/search-bar.component";
+import { SearchInputComponent } from "./components/search-input/search-input.component";
+import { SearchBarMobileComponent } from "./components/search-bar-mobile/search-bar-mobile.component";
 
 @NgModule({
   declarations: [
@@ -27,6 +30,9 @@ import { LanguageModalComponent } from "./components/language-modal/language-mod
     ProfileComponent,
     MenuTopComponent,
     LanguageModalComponent,
+    SearchBarComponent,
+    SearchInputComponent,
+    SearchBarMobileComponent,
   ],
   imports: [CommonModule, RouterModule.forChild([]), SharedModule],
 })

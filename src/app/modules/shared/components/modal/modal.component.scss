@@ -21,13 +21,16 @@
   }
 
   .modal {
-    padding: 20px 0 50px 50px;
     max-width: 90vw;
     width: 100%;
     background-color: #fff;
     color: #2c2c2c;
     z-index: 900;
     position: relative;
+
+    &.border {
+      border-radius: 6px;
+    }
 
     > span {
       pointer-events: all;
@@ -38,5 +41,9 @@
       padding: 1rem;
       font-size: 32px;
     }
+  }
+
+  .modal {
+    position: absolute;
   }
 }

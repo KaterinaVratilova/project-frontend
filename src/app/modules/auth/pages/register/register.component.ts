@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from "@angular/core";
 import { Store } from "@ngrx/store";
-import { FormBuilder, FormControl } from "@angular/forms";
+import { FormBuilder, FormControl, Validators } from "@angular/forms";
 
 import { AppState } from "../../../../app.module";
 import { setHideLanguage } from "../../../layouts/store/actions";
-import { RegisterRequest } from "../../services/auth.service";
 import { registerInitialized } from "../../store/actions";
 import { selectLoading } from "../../store/selectors";
+import { RegisterRequest } from "../../request";
 
 @Component({
   selector: "app-register",
@@ -16,9 +16,9 @@ import { selectLoading } from "../../store/selectors";
 })
 export class RegisterComponent implements OnInit, OnDestroy {
   form = this.formBuilder.group({
-    username: [""],
-    email: [""],
-    password: [""],
+    username: ["", [Validators.required, Validators.minLength(6), Validators.maxLength(16)]],
+    email: ["", Validators.required, Validators.email],
+    password: ["", Validators.required, Validators.minLength(9)],
   });
 
   loading = this.store.select(selectLoading);
@@ -38,8 +38,6 @@ export class RegisterComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
-    // Kdyz kliknu na tlacitko submit, zavola se localhost:3000/register nebo ne?
-
     const { username, email, password } = this.form.value as RegisterRequest;
 
     this.store.dispatch(

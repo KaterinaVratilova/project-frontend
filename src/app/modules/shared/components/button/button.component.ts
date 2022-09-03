@@ -6,6 +6,10 @@ export type MODE = "primary" | "secondary" | "transparent";
 
 export type ButtonType = "submit" | "button";
 
+export type TextPosition = "left" | "right" | "middle";
+
+export type Size = "normal" | "small";
+
 @Component({
   selector: "app-button",
   templateUrl: "./button.component.html",
@@ -13,15 +17,25 @@ export type ButtonType = "submit" | "button";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ButtonComponent {
+  @Input() size: Size = "normal";
+
   @Input() rounded: ROUNDED = "normal";
 
   @Input() mode: MODE = "primary";
 
+  @Input() textPosition: TextPosition = "middle";
+
   @Input() type: ButtonType = "button";
+
+  @Input() border = true;
 
   @Input() disabled = false;
 
   @Output() outClick = new EventEmitter<void>();
+
+  get clazz() {
+    return this._mode + " " + this.textPosition + " " + (this.border ? "" : "no-border") + " " + this.size;
+  }
 
   get _mode() {
     if (this.mode === "transparent") {

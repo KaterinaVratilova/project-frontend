@@ -1,0 +1,45 @@
+:host {
+  width: 100%;
+  //flex: 0;
+  display: none;
+}
+
+.top-bar {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  background-color: #fff;
+}
+
+.top {
+  height: 70px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  //min-height: 41px;
+  padding: 0 20px;
+
+  .input {
+    display: none;
+  }
+
+  > span {
+    margin-left: auto;
+  }
+}
+
+.bottom {
+  height: 60px;
+  box-shadow: 0 0 4px 0 rgb(0 0 0 / 8%);
+  padding: 0 10px 0 20px;
+}
+
+@media (min-width: 1023px) {
+  :host {
+    display: initial;
+  }
+
+  .input {
+    display: block !important;
+  }
+}
