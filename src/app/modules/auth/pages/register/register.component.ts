@@ -7,7 +7,7 @@ import { setHideLanguage } from "../../../layouts/store/actions";
 import { registerInitialized } from "../../store/actions";
 import { selectLoading } from "../../store/selectors";
 import { RegisterRequest } from "../../request";
-import {emailValidator} from "../../../common/validators/emailValidator";
+import { emailValidator } from "../../../common/validators/emailValidator";
 
 @Component({
   selector: "app-register",

@@ -4,7 +4,12 @@
 
     <div class="input-group">
       <app-input [formControl]="username" [placeholder]="'login.username' | translate"></app-input>
-      <app-input type="password" [formControl]="password" [placeholder]="'login.password' | translate"></app-input>
+      <app-input type="password" [formControl]="password" [placeholder]="'login.password' | translate">
+        <div *ngIf="(error | async) === 'BAD_CREDENTIALS'" class="error">
+          <span>Invalid password or username</span>
+          <a href="#">Forgot password?</a>
+        </div>
+      </app-input>
     </div>
 
     <app-checkbox>{{ "login.staySignedIn" | translate }}</app-checkbox>
