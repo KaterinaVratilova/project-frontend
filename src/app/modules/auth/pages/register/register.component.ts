@@ -7,6 +7,7 @@ import { setHideLanguage } from "../../../layouts/store/actions";
 import { registerInitialized } from "../../store/actions";
 import { selectLoading } from "../../store/selectors";
 import { RegisterRequest } from "../../request";
+import {emailValidator} from "../../../common/validators/emailValidator";
 
 @Component({
   selector: "app-register",
@@ -17,8 +18,8 @@ import { RegisterRequest } from "../../request";
 export class RegisterComponent implements OnInit, OnDestroy {
   form = this.formBuilder.group({
     username: ["", [Validators.required, Validators.minLength(6), Validators.maxLength(16)]],
-    email: ["", Validators.required, Validators.email],
-    password: ["", Validators.required, Validators.minLength(9)],
+    email: ["", [Validators.required, emailValidator]],
+    password: ["", [Validators.required, Validators.minLength(9)]],
   });
 
   loading = this.store.select(selectLoading);
