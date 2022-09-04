@@ -9,6 +9,7 @@ import { PortfolioComponent } from "./modules/portfolio/pages/portfolio/portfoli
 import { WatchlistComponent } from "./modules/watchlist/pages/watchlist/watchlist.component";
 import { HomeComponent } from "./modules/home/pages/home/home.component";
 import { DiscoverComponent } from "./modules/discover/pages/discover/discover.component";
+import { AuthGuard } from "./modules/common/auth.guard";
 
 const routes: Routes = [
   {
@@ -19,6 +20,7 @@ const routes: Routes = [
   {
     path: "",
     component: AuthLayoutComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: "portfolio",
