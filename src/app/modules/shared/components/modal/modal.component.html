@@ -1,6 +1,6 @@
 <div class="modal-wrapper">
   <div class="overlay"></div>
-  <div class="modal" [ngClass]="{ border: border }" [ngStyle]="{ width: width + 'px' || '100%' }">
+  <div class="modal" [ngClass]="{ border: border }" [ngStyle]="{ width: width ? width + 'px' : '100%' }">
     <span class="material-symbols-outlined" (click)="onCloseModal()"> close </span>
 
     <ng-content></ng-content>
