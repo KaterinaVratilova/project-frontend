@@ -1,4 +1,5 @@
 <div class="input-wrapper">
   <input [type]="type" [value]="_value" (keyup)="onChangeValue($event)" required />
   <label>{{ placeholder }}</label>
+  <ng-content></ng-content>
 </div>

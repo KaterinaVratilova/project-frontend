@@ -27,9 +27,21 @@
       <app-or></app-or>
 
       <div class="input-group">
-        <app-input [formControl]="username" [placeholder]="'register.username' | translate"></app-input>
-        <app-input [formControl]="email" [placeholder]="'register.email' | translate"></app-input>
-        <app-input type="password" [formControl]="password" [placeholder]="'register.password' | translate"></app-input>
+        <app-input [formControl]="username" [placeholder]="'register.username' | translate">
+          <app-form-error [showError]="username.dirty && username.getError('minlength')">
+            Please enter 6-16 characters in English
+          </app-form-error>
+        </app-input>
+        <app-input [formControl]="email" [placeholder]="'register.email' | translate">
+          <app-form-error [showError]="email.dirty && email.getError('invalidEmail')">
+            Enter a valid email address to be used for your account
+          </app-form-error>
+        </app-input>
+        <app-input type="password" [formControl]="password" [placeholder]="'register.password' | translate">
+          <app-form-error [showError]="password.dirty && password.getError('minlength')">
+            Please enter 6-16 characters in English
+          </app-form-error>
+        </app-input>
       </div>
 
       <div class="checkbox-group">
