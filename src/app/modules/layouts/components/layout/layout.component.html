@@ -1,5 +1,5 @@
 <div class="container">
-  <app-languages [language]="language" (outOpenModal)="onOpenModal()"></app-languages>
+  <app-languages [language]="(language | async) || ''" (outOpenModal)="onOpenModal()"></app-languages>
 
   <router-outlet></router-outlet>
 
