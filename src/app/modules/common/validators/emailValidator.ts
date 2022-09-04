@@ -1,4 +1,4 @@
-import {AbstractControl} from "@angular/forms";
+import { AbstractControl } from "@angular/forms";
 
 export function emailValidator(control: AbstractControl) {
   const value = control.value || "";
