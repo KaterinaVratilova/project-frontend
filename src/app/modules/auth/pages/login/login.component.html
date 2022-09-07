@@ -1,5 +1,5 @@
 <div class="login">
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
     <div class="header">{{ "login.signIn" | translate }}</div>
 
     <div class="input-group">
