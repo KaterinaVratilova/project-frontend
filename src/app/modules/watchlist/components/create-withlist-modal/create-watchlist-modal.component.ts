@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from "@angular/core";
+import { ChangeDetectionStrategy, Component, EventEmitter, Output } from "@angular/core";
 
 @Component({
   selector: "app-create-wishlist-modal",
@@ -6,4 +6,10 @@ import { ChangeDetectionStrategy, Component } from "@angular/core";
   styleUrls: ["create-watchlist-modal.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CreateWatchlistModalComponent {}
+export class CreateWatchlistModalComponent {
+  @Output() outClose = new EventEmitter();
+
+  onClose() {
+    this.outClose.emit();
+  }
+}

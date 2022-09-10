@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from "@angular/core";
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { map } from "rxjs";
 
@@ -24,5 +24,19 @@ export class TopBarComponent {
     })
   );
 
+  @Input() selectOpen = false;
+
+  @Output() outCreateWatchlist = new EventEmitter();
+
+  @Output() outToggleSelect = new EventEmitter();
+
   constructor(private store: Store<AppState>) {}
+
+  onCreateWatchlist() {
+    this.outCreateWatchlist.emit();
+  }
+
+  onToggleSelect() {
+    this.outToggleSelect.emit();
+  }
 }

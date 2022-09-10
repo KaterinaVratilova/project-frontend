@@ -21,6 +21,8 @@ const wait = (time: number) => new Promise((resolve) => {
 export class WatchlistComponent implements OnInit {
   modalOpen = false;
 
+  selectOpen = false;
+
   constructor(private store: Store<AppState>) {}
 
   ngOnInit(): void {
@@ -38,5 +40,18 @@ export class WatchlistComponent implements OnInit {
         take(1)
       )
       .subscribe();
+  }
+
+  onCreateWatchlist() {
+    this.modalOpen = true;
+    this.selectOpen = false;
+  }
+
+  onToggleSelect() {
+    this.selectOpen = !this.selectOpen;
+  }
+
+  onClose() {
+    this.modalOpen = false;
   }
 }

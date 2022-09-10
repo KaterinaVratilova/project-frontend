@@ -7,9 +7,10 @@ import { TopBarComponent } from "./components/top-bar/top-bar.component";
 import { SelectHeaderComponent } from "./components/select-header/select-header.component";
 import { SharedModule } from "../shared/shared.module";
 import { WatchlistService } from "./services/watchlist.service";
+import { CreateWatchlistModalComponent } from "./components/create-withlist-modal/create-watchlist-modal.component";
 
 @NgModule({
-  declarations: [WatchlistComponent, TopBarComponent, SelectHeaderComponent],
+  declarations: [WatchlistComponent, TopBarComponent, SelectHeaderComponent, CreateWatchlistModalComponent],
   imports: [CommonModule, HttpClientModule, SharedModule],
   providers: [WatchlistService],
 })

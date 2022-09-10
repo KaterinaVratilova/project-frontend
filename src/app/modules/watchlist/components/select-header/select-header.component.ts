@@ -18,14 +18,18 @@ export class SelectHeaderComponent {
 
   @Output() outCreateWatchlist = new EventEmitter<void>();
 
-  open = false;
+  @Output() outToggleSelect = new EventEmitter<void>();
+
+  @Input() selectOpen = false;
 
   onToggle() {
-    this.open = !this.open;
+    this.outToggleSelect.emit();
   }
 
   onClickOutside() {
-    this.open = false;
+    if (this.selectOpen) {
+      this.outToggleSelect.emit();
+    }
   }
 
   onCreateWatchlist() {

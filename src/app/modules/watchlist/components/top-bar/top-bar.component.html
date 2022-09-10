@@ -1,5 +1,10 @@
 <div class="top-bar">
-  <app-select-header [options]="(watchlist | async) || []"></app-select-header>
+  <app-select-header
+    [selectOpen]="selectOpen"
+    [options]="(watchlist | async) || []"
+    (outCreateWatchlist)="onCreateWatchlist()"
+    (outToggleSelect)="onToggleSelect()"
+  ></app-select-header>
 
   <div></div>
 </div>

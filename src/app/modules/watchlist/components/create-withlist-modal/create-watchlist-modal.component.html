@@ -1,13 +1,22 @@
-<div class="watchlist-modal">
-  <div class="actions">
-    <span class="material-symbols-outlined"> close </span>
+<div class="overlay">
+  <div class="watchlist-modal">
+    <div class="actions">
+      <span class="material-symbols-outlined" (click)="onClose()"> close </span>
+    </div>
+
+    <div class="content">
+      <div class="image"></div>
+
+      <h2>Choose a name for your new watchlist</h2>
+
+      <div class="input-wrapper">
+        <app-input placeholder="Name this list"></app-input>
+      </div>
+
+      <footer>
+        <app-button mode="secondary">Create New List</app-button>
+      </footer>
+    </div>
   </div>
 
-  <div class="content">
-    <div class="image"></div>
-
-    <h2>Choose a name for your new watchlist</h2>
-
-    <app-button>Create New List</app-button>
-  </div>
 </div>

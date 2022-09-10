@@ -1,5 +1,74 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.8);
+}
+
 .watchlist-modal {
   padding: 30px 30px 100px;
+  background-color: #fff;
+  width: 640px;
+  max-height: 800px;
+  height: calc(100vh - 20px);
+  border-radius: 6px;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+
+  .actions {
+    width: 100%;
+    text-align: right;
+
+    span {
+      cursor: pointer;
+    }
+  }
+
+  .content {
+    width: 370px;
+    height: 460px;
+    margin: 0 auto;
+    justify-content: space-around;
+
+    footer {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 100px;
+
+      ::ng-deep {
+        button {
+          padding: 0 40px !important;
+        }
+      }
+    }
+
+    h2 {
+      font-weight: 300;
+      color: #2c2c2c;
+      line-height: 1.4;
+      letter-spacing: -.4px;
+      margin-bottom: 10px;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    .input-wrapper {
+      margin-bottom: 20px;
+      margin-top: 30px;
+
+      ::ng-deep {
+        .input-wrapper {
+          min-height: auto !important;
+        }
+      }
+    }
+  }
 
   .image {
     flex: none;
