@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
-import { HttpClient, HttpClientModule } from "@angular/common/http";
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from "@angular/common/http";
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { StoreModule } from "@ngrx/store";
@@ -15,11 +15,12 @@ import { authReducer, AuthState } from "./modules/auth/store/reducer";
 import { AuthEffect } from "./modules/auth/store/effects";
 import { HomeModule } from "./modules/home/home.module";
 import { WatchlistModule } from "./modules/watchlist/watchlist.module";
-import { DiscoverModule } from "./modules/discover/discover.module";
 import { watchlistReducer, WatchlistState } from "./modules/watchlist/store/reducer";
 import { PortfolioModule } from "./modules/portfolio/portfolio.module";
 import { SettingsModule } from "./modules/settings/settings.module";
 import { CommonModule } from "./modules/common/common.module";
+import { WatchlistEffect } from "./modules/watchlist/store/effects";
+import { AuthInterceptor } from "./modules/common/interceptors/auth.interceptor";
 
 export type AppState = {
   layouts: LayoutsState;
@@ -37,7 +38,6 @@ export type AppState = {
     AuthModule,
     HomeModule,
     WatchlistModule,
-    DiscoverModule,
     PortfolioModule,
     SettingsModule,
     CommonModule,
@@ -49,9 +49,15 @@ export type AppState = {
       },
     }),
     StoreModule.forRoot({ layouts: layoutsReducer, auth: authReducer, watchlist: watchlistReducer }, {}),
-    EffectsModule.forRoot([AuthEffect]),
+    EffectsModule.forRoot([AuthEffect, WatchlistEffect]),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

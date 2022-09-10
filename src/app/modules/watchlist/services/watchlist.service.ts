@@ -8,11 +8,22 @@ export type Watchlist = {
   label: string;
 };
 
+export type WatchlistCreate = {
+  userId: string;
+  label: string;
+};
+
 @Injectable()
 export class WatchlistService {
   constructor(private http: HttpClient) {}
 
   getAll(userId: string) {
-    return this.http.get<Watchlist[]>(`${apiUrl}/${userId}/watchlist`);
+    return this.http.get<Watchlist[]>(`${apiUrl}/user/${userId}/watchlist`);
+  }
+
+  create(request: WatchlistCreate) {
+    return this.http.post<void>(`${apiUrl}/user/${request.userId}/watchlist`, {
+      label: request.label,
+    });
   }
 }

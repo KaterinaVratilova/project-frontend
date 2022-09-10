@@ -3,8 +3,14 @@ import { Store } from "@ngrx/store";
 import { filter, take, tap } from "rxjs";
 
 import { AppState } from "../../../../app.module";
-import { watchlistInitialized } from "../../store/actions";
+import { watchlistCreateInitialized, watchlistInitialized } from "../../store/actions";
 import { selectUser } from "../../../auth/store/selectors";
+
+const wait = (time: number) => new Promise((resolve) => {
+  setTimeout(() => {
+    resolve("done");
+  }, time);
+});
 
 @Component({
   selector: "app-watchlist",
@@ -22,8 +28,12 @@ export class WatchlistComponent implements OnInit {
       .select(selectUser)
       .pipe(
         filter(Boolean),
-        tap((user) => {
+        tap(async (user) => {
           this.store.dispatch(watchlistInitialized({ userId: user.id }));
+
+          await wait(2000);
+
+          this.store.dispatch(watchlistCreateInitialized({ label: "USA", userId: user.id }));
         }),
         take(1)
       )

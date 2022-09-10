@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component } from "@angular/core";
 
 import { MenuItem } from "../types";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-menu-complementary",
@@ -41,4 +42,13 @@ export class MenuComplementaryComponent {
       icon: "quiz",
     },
   ];
+
+  constructor(private router: Router) {
+  }
+
+  onLogout() {
+    localStorage.clear();
+    this.router.navigate(["logout"]);
+  }
+
 }

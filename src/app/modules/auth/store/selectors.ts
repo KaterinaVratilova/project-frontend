@@ -9,4 +9,6 @@ export const selectError = createSelector(selectAuth, (state: AuthState) => stat
 
 export const selectLoading = createSelector(selectAuth, (state: AuthState) => state.loading);
 
-export const selectUser = createSelector(selectAuth, (state: AuthState) => state.user);
+export const selectUser = createSelector(selectAuth, (state: AuthState) => {
+  return state.user;
+});
