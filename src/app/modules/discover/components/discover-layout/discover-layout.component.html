@@ -1,0 +1,9 @@
+<div>
+  <ul>
+    <app-navigation-item *ngFor="let url of urls" [url]="url"></app-navigation-item>
+  </ul>
+</div>
+
+<div class="discover-layout">
+  <router-outlet></router-outlet>
+</div>

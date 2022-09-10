@@ -84,3 +84,15 @@ a {
     padding: 40px 50px 30px 50px;
   }
 }
+
+.error {
+  color: #ee2614;
+  font-size: 12px;
+  margin-top: 5px;
+
+  a {
+    pointer-events: all;
+    margin-left: 0.5rem;
+    color: #0079b9;
+  }
+}

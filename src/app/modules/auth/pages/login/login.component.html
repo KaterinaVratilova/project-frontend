@@ -1,13 +1,13 @@
 <div class="login">
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
     <div class="header">{{ "login.signIn" | translate }}</div>
 
     <div class="input-group">
-      <app-input [formControl]="username" [placeholder]="'login.username' | translate"></app-input>
+      <app-input [formControl]="username" [placeholder]="'login.username' | translate" type="email"></app-input>
       <app-input type="password" [formControl]="password" [placeholder]="'login.password' | translate">
         <div *ngIf="(error | async) === 'BAD_CREDENTIALS'" class="error">
           <span>Invalid password or username</span>
-          <a href="#">Forgot password?</a>
+          <a routerLink="/forgot-password">Forgot password?</a>
         </div>
       </app-input>
     </div>
@@ -43,7 +43,7 @@
 
     <div class="sign-up">
       {{ "login.noAccount" | translate }}
-      <a [routerLink]="['/register']">{{ "login.signUp" | translate }}</a>
+      <a data-cy="goto-register" [routerLink]="['/register']">{{ "login.signUp" | translate }}</a>
     </div>
   </form>
 </div>

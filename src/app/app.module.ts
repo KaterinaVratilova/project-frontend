@@ -16,10 +16,15 @@ import { AuthEffect } from "./modules/auth/store/effects";
 import { HomeModule } from "./modules/home/home.module";
 import { WatchlistModule } from "./modules/watchlist/watchlist.module";
 import { DiscoverModule } from "./modules/discover/discover.module";
+import { watchlistReducer, WatchlistState } from "./modules/watchlist/store/reducer";
+import { PortfolioModule } from "./modules/portfolio/portfolio.module";
+import { SettingsModule } from "./modules/settings/settings.module";
+import { CommonModule } from "./modules/common/common.module";
 
 export type AppState = {
   layouts: LayoutsState;
   auth: AuthState;
+  watchlist: WatchlistState;
 };
 
 @NgModule({
@@ -33,6 +38,9 @@ export type AppState = {
     HomeModule,
     WatchlistModule,
     DiscoverModule,
+    PortfolioModule,
+    SettingsModule,
+    CommonModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -40,7 +48,7 @@ export type AppState = {
         deps: [HttpClient],
       },
     }),
-    StoreModule.forRoot({ layouts: layoutsReducer, auth: authReducer }, {}),
+    StoreModule.forRoot({ layouts: layoutsReducer, auth: authReducer, watchlist: watchlistReducer }, {}),
     EffectsModule.forRoot([AuthEffect]),
   ],
   providers: [],

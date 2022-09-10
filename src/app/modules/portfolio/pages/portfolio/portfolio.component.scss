@@ -1,0 +1,150 @@
+.portfolio {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  > div {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+  }
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  box-shadow: 0 0 4px 0 rgb(0 0 0 / 8%);
+  height: 60px;
+  padding: 0 10px 0 20px;
+  width: 100%;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+
+.title {
+  color: var(--neutral-100, #2c2c2c);
+  font-size: 22px;
+  letter-spacing: -0.4px;
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  overflow-y: auto;
+}
+
+table {
+  background-color: #fff;
+  width: 100%;
+  border-collapse: collapse;
+
+  thead {
+    color: #777;
+
+    th {
+      font-style: normal;
+      font-size: 0.875rem;
+      letter-spacing: -0.25px;
+      text-transform: capitalize;
+      cursor: pointer;
+      text-align: right;
+      padding: 10px 20px;
+
+      &:first-child {
+        text-align: left;
+        //width: 1px;
+      }
+    }
+  }
+
+  tr {
+    border-bottom: 1pt solid #ededed;
+
+    > th {
+      &:last-child {
+        //text-align: right !important;
+      }
+    }
+
+    > td {
+      padding: 10px 20px;
+      text-align: right;
+
+      &:last-child {
+        //text-align: right !important;
+        width: 1px;
+      }
+    }
+  }
+}
+
+.image {
+  border-radius: 4px;
+  width: 35px;
+  height: 35px;
+
+  > img {
+    width: 100%;
+  }
+}
+
+.asset {
+  display: flex;
+}
+
+.stock-name {
+  display: flex;
+  flex-direction: column;
+  color: #777;
+  margin-left: 10px;
+  align-items: flex-start;
+
+  > span {
+    &:first-child {
+      color: #2c2c2c;
+      font-style: normal;
+      font-size: 0.875rem;
+      letter-spacing: -0.25px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    &:last-child {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-weight: 400;
+      min-width: 0;
+      display: block;
+      font-size: 0.75rem;
+      letter-spacing: -0.2px;
+    }
+  }
+}
+
+.market-amount {
+  display: flex;
+  flex-direction: column;
+
+  > span {
+    &:last-child {
+      font-size: 0.75rem;
+      letter-spacing: -0.2px;
+      color: #777;
+    }
+  }
+}
+
+.positive {
+  color: #3dae23;
+}
+
+.negative {
+  color: #e8464a;
+}

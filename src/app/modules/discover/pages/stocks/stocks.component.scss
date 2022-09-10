@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  flex-flow: column wrap;
+  max-width: 1108px;
+  margin: 0 auto;
+}
+
+.title {
+  padding-bottom: 30px;
+  font-size: 22px;
+}
+
+.instruments {
+  display: flex;
+  gap: 14px;
+  justify-content: space-between;
+}

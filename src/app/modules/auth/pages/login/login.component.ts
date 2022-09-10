@@ -1,11 +1,16 @@
 import { ChangeDetectionStrategy, Component } from "@angular/core";
-import { FormBuilder, FormControl, Validators } from "@angular/forms";
+import { FormBuilder, FormControl, FormGroup, NonNullableFormBuilder, Validators } from "@angular/forms";
 import { Store } from "@ngrx/store";
 
 import { AppState } from "../../../../app.module";
 import { loginInitialized } from "../../store/actions";
 import { LoginRequest } from "../../request";
 import { selectError } from "../../store/selectors";
+
+type LoginForm = {
+  email: FormControl<string>;
+  password: FormControl<string>;
+};
 
 @Component({
   selector: "app-login",
@@ -14,14 +19,14 @@ import { selectError } from "../../store/selectors";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginComponent {
-  error = this.store.select(selectError);
-
-  form = this.formBuilder.group({
-    email: ["", [Validators.required]],
-    password: ["", [Validators.required]],
+  form: FormGroup<LoginForm> = new FormGroup<LoginForm>({
+    email: new FormControl("", { validators: [Validators.required], nonNullable: true }),
+    password: new FormControl("", { validators: [Validators.required], nonNullable: true }),
   });
 
-  constructor(private formBuilder: FormBuilder, private store: Store<AppState>) {}
+  error = this.store.select(selectError);
+
+  constructor(private formBuilder: NonNullableFormBuilder, private store: Store<AppState>) {}
 
   get username() {
     return this.form.get("email") as FormControl;
@@ -31,9 +36,7 @@ export class LoginComponent {
     return this.form.get("password") as FormControl;
   }
 
-  onSubmit() {
-    const { email, password } = this.form.value as LoginRequest;
-
+  onSubmit({ email, password }: any) {
     this.store.dispatch(
       loginInitialized({
         request: {

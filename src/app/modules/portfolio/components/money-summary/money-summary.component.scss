@@ -1,0 +1,40 @@
+:host {
+  flex: 0;
+  display: none;
+}
+
+@media (min-width: 1023px) {
+  :host {
+    display: flex;
+    width: calc(100% - 340px);
+  }
+}
+
+.summary {
+  width: calc(100% - 340px);
+  box-shadow: 0 1px 12px #00000014;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+
+  > .spacer {
+    border-top: 2px solid;
+    display: block;
+    width: 1px;
+    background-color: #ececec;
+    position: relative;
+
+    span {
+      color: rgb(44, 44, 44) !important;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 32px;
+      background-color: #fff;
+      z-index: 1;
+    }
+  }
+}
