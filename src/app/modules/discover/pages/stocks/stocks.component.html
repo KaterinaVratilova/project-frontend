@@ -1,0 +1,11 @@
+<div class="container">
+  <h1 class="title">Explore stocks</h1>
+
+  <div class="instruments">
+    <app-instrument-card
+      *ngFor="let instrument of instruments"
+      [img]="instrument.img"
+      [instrument]="instrument.data"
+    ></app-instrument-card>
+  </div>
+</div>

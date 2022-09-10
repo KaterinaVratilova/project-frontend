@@ -1,0 +1,12 @@
+.watchlist-modal {
+  padding: 30px 30px 100px;
+
+  .image {
+    flex: none;
+    width: 400px;
+    height: 250px;
+    background-image: url("/assets/images/image-1.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}

@@ -1,0 +1,28 @@
+:host {
+  flex: 1;
+}
+
+.node {
+  height: 80px;
+  padding: 15px;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+
+  > div {
+    &:first-child {
+      font-size: 22px;
+      letter-spacing: -0.3px;
+      font-weight: 300;
+    }
+  }
+}
+
+.label {
+  color: #777;
+  font-size: 16px;
+  text-transform: capitalize;
+  letter-spacing: -0.35px;
+  -webkit-font-smoothing: antialiased;
+  line-height: 18px;
+}

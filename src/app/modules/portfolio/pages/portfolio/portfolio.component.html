@@ -1,1 +1,65 @@
-<h1>Portfolio page</h1>
+<div class="portfolio">
+  <div>
+    <div class="top">
+      <div class="title">
+        <div>Portfolio</div>
+        <span class="material-symbols-outlined"> keyboard_arrow_down </span>
+      </div>
+
+      <span class="material-symbols-outlined"> tune </span>
+    </div>
+
+    <div class="content">
+      <table>
+        <thead>
+          <tr>
+            <th>Asset</th>
+            <th>Units</th>
+            <th>Avg. open</th>
+            <th>Invested</th>
+            <th>P/L($)</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let item of items">
+            <td>
+              <div class="asset">
+                <div
+                  class="image"
+                  [ngStyle]="{
+                    'background-image': backgroundImageResolver(item.img),
+                    'background-color': backgroundResolver(item.img)
+                  }"
+                >
+                  <img [src]="item.img" alt="Stock" />
+                </div>
+
+                <div class="stock-name">
+                  <span>{{ item.ticker }}</span>
+                  <span>{{ item.name }}</span>
+                </div>
+              </div>
+            </td>
+
+            <td>
+              <div class="market-amount">
+                <span>{{ item.units }}</span>
+                <span>Buying</span>
+              </div>
+            </td>
+            <td>{{ item.avgOpen }}</td>
+            <td>{{ item.invested | currency }}</td>
+            <td [ngClass]="{ positive: item.pln > 0, negative: item.pln < 0 }">{{ item.pln | currency }}</td>
+            <td>
+              <span class="material-symbols-outlined"> more_vert </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <app-money-summary></app-money-summary>
+  </div>
+</div>

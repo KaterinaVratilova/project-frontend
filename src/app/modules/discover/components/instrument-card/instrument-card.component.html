@@ -1,0 +1,21 @@
+<div *ngIf="instrument" class="card">
+  <div class="card-content" [ngStyle]="{ 'background-color': backgroundColor }">
+    <div class="top">
+      <div class="featured">Featured</div>
+    </div>
+
+    <div class="bottom">
+      <div class="name">
+        <div>VZ</div>
+        <div>Verizon</div>
+      </div>
+
+      <div class="price">
+        <div>{{ instrument.price }}</div>
+        <div>-{{ instrument.movement }}</div>
+      </div>
+    </div>
+
+    <img [src]="img" alt="Instrument" />
+  </div>
+</div>

@@ -1,0 +1,130 @@
+:host {
+  height: 100%;
+}
+
+.phone-image {
+  position: absolute;
+  top: 60px;
+  bottom: 0;
+  background-repeat: no-repeat;
+  right: 0;
+  left: 55%;
+  display: inline-block;
+  background-image: url("/assets/images/mobile-bg.png");
+}
+
+.container {
+  background-color: #fff;
+  height: 100%;
+  position: relative;
+}
+
+.logout {
+  width: 47%;
+  text-align: right;
+}
+
+.left {
+  padding-top: 100px;
+  width: 400px;
+  display: inline-block;
+  text-align: left;
+
+  .login {
+    color: #777;
+    font-size: 16px;
+    padding: 15px;
+    background-color: #f4f4f4;
+    border: solid 1px #eee;
+    width: 100%;
+    margin-top: 30px;
+    border-radius: 5px;
+
+    a {
+      color: #0079b9;
+
+      &:hover {
+        color: #2fa8f6;
+      }
+    }
+  }
+
+  .store {
+    margin-top: 30px;
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+
+    .text {
+      text-transform: uppercase;
+    }
+
+    .image-google {
+      vertical-align: middle;
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      background-position: -75px -2px;
+      background-image: url("/assets/images/store-icons.png");
+    }
+
+    .image-apple {
+      vertical-align: middle;
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      background-position: -15px 0;
+      background-image: url("/assets/images/store-icons.png");
+    }
+
+    a {
+      border-radius: 3px;
+      display: inline-block;
+      padding: 5px 10px;
+      font-size: 14px;
+      text-transform: uppercase;
+      background-color: #3d404a;
+      color: #fff;
+      width: 47%;
+
+      &:hover {
+        background-color: #555b70;
+      }
+
+      > span {
+        &:last-child {
+          vertical-align: middle;
+          display: inline-block;
+          width: calc(100% - 50px);
+          margin: 0 -4px;
+          line-height: 16px;
+        }
+      }
+    }
+  }
+
+  .title {
+    font-size: 34px;
+    line-height: 1;
+  }
+
+  .barcode {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    width: 400px;
+
+    .text {
+      margin-left: 4px;
+      font-size: 16px;
+      color: #2c2c2c;
+      line-height: 18px;
+      width: calc(100% - 120px);
+    }
+
+    img {
+      width: 90px;
+      height: 90px;
+    }
+  }
+}

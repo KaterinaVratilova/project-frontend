@@ -8,8 +8,12 @@ import { AuthLayoutComponent } from "./modules/layouts/components/auth-layout/au
 import { PortfolioComponent } from "./modules/portfolio/pages/portfolio/portfolio.component";
 import { WatchlistComponent } from "./modules/watchlist/pages/watchlist/watchlist.component";
 import { HomeComponent } from "./modules/home/pages/home/home.component";
-import { DiscoverComponent } from "./modules/discover/pages/discover/discover.component";
-import { AuthGuard } from "./modules/common/auth.guard";
+import { SettingsComponent } from "./modules/settings/pages/settings/settings.component";
+import { ForgotPasswordComponent } from "./modules/auth/pages/forgot-password/forgot-password.component";
+import { NotFoundComponent } from "./modules/common/pages/not-found/not-found.component";
+import { GeneralComponent } from "./modules/settings/pages/general/general.component";
+import { LogoutComponent } from "./modules/auth/pages/logout/logout.component";
+import { AuthGuard } from "./modules/auth/guards/auth.guard";
 
 const routes: Routes = [
   {
@@ -35,8 +39,20 @@ const routes: Routes = [
         component: HomeComponent,
       },
       {
+        path: "settings",
+        component: SettingsComponent,
+      },
+      {
         path: "discover",
-        component: DiscoverComponent,
+        loadChildren: () => import("./modules/discover/discover.module").then((m) => m.DiscoverModule),
+      },
+      {
+        path: "settings",
+        component: SettingsComponent,
+      },
+      {
+        path: "settings/general",
+        component: GeneralComponent,
       },
     ],
   },
@@ -52,7 +68,19 @@ const routes: Routes = [
         path: "register",
         component: RegisterComponent,
       },
+      {
+        path: "forgot-password",
+        component: ForgotPasswordComponent,
+      },
+      {
+        path: "logout",
+        component: LogoutComponent,
+      },
     ],
+  },
+  {
+    path: "**",
+    component: NotFoundComponent,
   },
 ];
 

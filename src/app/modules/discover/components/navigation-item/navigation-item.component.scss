@@ -1,0 +1,139 @@
+li {
+  min-width: 100px;
+  //min-width: 140px;
+  position: relative;
+  height: 100%;
+
+  .border {
+    display: none;
+  }
+
+  a {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--neutral-70-dm);
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  &.active {
+    .border {
+      bottom: -15px;
+      width: 100%;
+      position: absolute;
+      display: block;
+      border-bottom: 2px solid #32374b;
+    }
+  }
+}
+
+.icon-discovery {
+  font-family: iconDiscoveryFont, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  color: var(--neutral-70-dm);
+  pointer-events: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.category-wrapper .icon-discovery-active {
+  color: #32374b;
+}
+
+.category-wrapper:hover .icon-discovery {
+  color: var(--neutral-40-dm);
+}
+
+.category-wrapper .icon-discovery::after {
+  content: "\e921";
+  font-family: iconFont, "Open Sans", ariel, sans-serif;
+  font-style: normal;
+  font-size: 20px;
+}
+
+.category-wrapper-stocks .icon-discovery::after {
+  content: "\e905";
+  font-size: 20px;
+}
+
+.category-wrapper-etfs .icon-discovery::after {
+  content: "\e903";
+  font-size: 20px;
+}
+
+.category-wrapper-crypto .icon-discovery::after {
+  content: "\e901";
+  font-size: 20px;
+}
+
+.category-wrapper-indices .icon-discovery::after {
+  content: "\e900";
+  font-size: 20px;
+}
+
+.category-wrapper-commodities .icon-discovery::after {
+  content: "\e904";
+  font-size: 20px;
+}
+
+.category-wrapper-currencies .icon-discovery::after {
+  content: "\e902";
+  font-size: 20px;
+}
+
+//.category-wrapper > a {
+//  display: flex;
+//  flex-direction: column;
+//  justify-content: flex-end;
+//  width: 100%;
+//  overflow: hidden
+//}
+
+.category-bottom {
+  width: 100%;
+  display: inline-block;
+}
+
+.category-bottom-active {
+  width: 100%;
+  border-bottom: 2px solid #32374b;
+  margin-bottom: 3px;
+}
+
+.overview-wrapper {
+  margin-top: 8px;
+  display: block;
+}
+
+.overview-wrapper .category-name {
+  margin-top: 12px;
+  text-align: center;
+  margin-bottom: -12px;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+
+.overview-wrapper .category-bottom-active {
+  margin-bottom: -1px;
+}
+
+@media (max-width: 767px) {
+  .category-bottom-active {
+    margin-bottom: 1px;
+  }
+  .overview-wrapper {
+    margin: 8px 0 0 10px;
+  }
+  .overview-wrapper .category-bottom-active {
+    margin-bottom: -3px;
+  }
+}
+
+.overview-wrapper .category-active path {
+  fill: #32374b;
+}
