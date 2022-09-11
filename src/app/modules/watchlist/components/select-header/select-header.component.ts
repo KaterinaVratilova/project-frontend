@@ -1,8 +1,11 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from "@angular/core";
+import { Watchlist } from "../../services/watchlist.service";
 
 export type SelectHeaderOption = {
   label: string;
   url: string;
+  active: boolean;
+  id: string;
 };
 
 @Component({
@@ -14,7 +17,7 @@ export type SelectHeaderOption = {
 export class SelectHeaderComponent {
   @Input() options: SelectHeaderOption[] = [];
 
-  @Input() selected?: SelectHeaderOption;
+  @Input() selected?: Watchlist;
 
   @Output() outCreateWatchlist = new EventEmitter<void>();
 

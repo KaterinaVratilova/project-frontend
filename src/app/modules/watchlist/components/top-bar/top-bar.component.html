@@ -1,7 +1,8 @@
 <div class="top-bar">
   <app-select-header
+    [selected]="(selectedWatchlist | async) || undefined"
     [selectOpen]="selectOpen"
-    [options]="(watchlist | async) || []"
+    [options]="(watchlistOptions | async) || []"
     (outCreateWatchlist)="onCreateWatchlist()"
     (outToggleSelect)="onToggleSelect()"
   ></app-select-header>

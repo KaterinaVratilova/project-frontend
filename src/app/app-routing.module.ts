@@ -13,6 +13,8 @@ import { ForgotPasswordComponent } from "./modules/auth/pages/forgot-password/fo
 import { NotFoundComponent } from "./modules/common/pages/not-found/not-found.component";
 import { GeneralComponent } from "./modules/settings/pages/general/general.component";
 import { LogoutComponent } from "./modules/auth/pages/logout/logout.component";
+import { ApplicationGuard } from "./modules/auth/guards/application.guard";
+import { AuthGuard } from "./modules/auth/guards/auth.guard";
 
 const routes: Routes = [
   {
@@ -23,7 +25,7 @@ const routes: Routes = [
   {
     path: "",
     component: AuthLayoutComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [ApplicationGuard],
     children: [
       {
         path: "portfolio",
@@ -31,6 +33,10 @@ const routes: Routes = [
       },
       {
         path: "watchlist",
+        component: WatchlistComponent,
+      },
+      {
+        path: "watchlist/:id",
         component: WatchlistComponent,
       },
       {
@@ -58,6 +64,7 @@ const routes: Routes = [
   {
     path: "",
     component: LayoutComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: "login",

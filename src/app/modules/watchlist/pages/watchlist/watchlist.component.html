@@ -5,5 +5,11 @@
     (outToggleSelect)="onToggleSelect()"
   ></app-top-bar>
 
-  <app-create-wishlist-modal *ngIf="modalOpen" (outClose)="onClose()"></app-create-wishlist-modal>
+  <h1>{{ (selectedWatchlist | async) || "NONE" }}</h1>
+
+  <app-create-wishlist-modal
+    *ngIf="modalOpen"
+    (outSubmit)="onSubmit($event)"
+    (outClose)="onClose()"
+  ></app-create-wishlist-modal>
 </div>

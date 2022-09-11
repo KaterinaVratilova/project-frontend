@@ -5,4 +5,6 @@ import { WatchlistState } from "./reducer";
 
 export const selectWatchlist = (state: AppState) => state.watchlist;
 
-export const selectWatchlistList = createSelector(selectWatchlist, (state: WatchlistState) => state.watchlist);
+export const selectWatchlistList = createSelector(selectWatchlist, (state: WatchlistState) => state.watchlists);
+
+export const selectWatchlistItem = createSelector(selectWatchlist, (state: WatchlistState) => state.watchlist);

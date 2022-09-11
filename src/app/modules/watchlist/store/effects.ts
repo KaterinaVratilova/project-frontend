@@ -21,8 +21,8 @@ export class WatchlistEffect {
       ofType(watchlistInitialized),
       switchMap((action) => {
         return this.watchlistService.getAll(action.userId).pipe(
-          map((watchlist) => {
-            return watchlistDone({ watchlist });
+          map((watchlists) => {
+            return watchlistDone({ watchlists });
           }),
           catchError(() => of(watchlistError({ error: "Something went wrong" })))
         );

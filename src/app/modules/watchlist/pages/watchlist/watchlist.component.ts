@@ -1,17 +1,13 @@
 import { ChangeDetectionStrategy, Component, OnInit } from "@angular/core";
 import { Store } from "@ngrx/store";
-import { filter, take, tap } from "rxjs";
+import { filter, map, take, tap } from "rxjs";
+import { publishReplay, refCount } from "rxjs/operators";
 
 import { AppState } from "../../../../app.module";
 import { watchlistCreateInitialized, watchlistInitialized } from "../../store/actions";
 import { selectUser } from "../../../auth/store/selectors";
-
-const wait = (time: number) =>
-  new Promise((resolve) => {
-    setTimeout(() => {
-      resolve("done");
-    }, time);
-  });
+import { CreateWatchlistForm } from "../../components/create-watchlist-modal/create-watchlist-modal.component";
+import { selectWatchlistItem } from "../../store/selectors";
 
 @Component({
   selector: "app-watchlist",
@@ -24,19 +20,21 @@ export class WatchlistComponent implements OnInit {
 
   selectOpen = false;
 
+  selectedWatchlist = this.store.select(selectWatchlistItem).pipe(
+    map((watchlist) => {
+      return watchlist?.label;
+    })
+  );
+
+  user = this.store.select(selectUser).pipe(filter(Boolean), publishReplay(1), refCount());
+
   constructor(private store: Store<AppState>) {}
 
   ngOnInit(): void {
-    this.store
-      .select(selectUser)
+    this.user
       .pipe(
-        filter(Boolean),
         tap(async (user) => {
           this.store.dispatch(watchlistInitialized({ userId: user.id }));
-
-          await wait(2000);
-
-          this.store.dispatch(watchlistCreateInitialized({ label: "USA", userId: user.id }));
         }),
         take(1)
       )
@@ -54,5 +52,17 @@ export class WatchlistComponent implements OnInit {
 
   onClose() {
     this.modalOpen = false;
+  }
+
+  onSubmit(formData: CreateWatchlistForm) {
+    this.user.pipe(take(1)).subscribe((value) => {
+      this.store.dispatch(
+        watchlistCreateInitialized({
+          userId: value.id,
+          label: formData.label,
+        })
+      );
+      this.modalOpen = false;
+    });
   }
 }

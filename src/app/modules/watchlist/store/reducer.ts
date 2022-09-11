@@ -2,6 +2,7 @@ import { createReducer, on } from "@ngrx/store";
 
 import { Watchlist } from "../services/watchlist.service";
 import {
+  setSelectedWatchlist,
   watchlistCreateDone,
   watchlistCreateError,
   watchlistCreateInitialized,
@@ -11,12 +12,14 @@ import {
 } from "./actions";
 
 export type WatchlistState = {
-  watchlist: Watchlist[];
+  watchlists: Watchlist[];
+  watchlist?: Watchlist;
   loading: boolean;
 };
 
 export const watchlistInitialState: WatchlistState = {
-  watchlist: [],
+  watchlists: [],
+  watchlist: undefined,
   loading: true,
 };
 
@@ -24,7 +27,7 @@ export const watchlistReducer = createReducer(
   watchlistInitialState,
   on(watchlistInitialized, (state) => ({ ...state, loading: true, error: "" })),
 
-  on(watchlistDone, (state) => ({ ...state, loading: false, error: "" })),
+  on(watchlistDone, (state, { watchlists }) => ({ ...state, watchlists, loading: false, error: "" })),
 
   on(watchlistError, (state, { error }) => ({ ...state, loading: false, error })),
 
@@ -32,5 +35,7 @@ export const watchlistReducer = createReducer(
 
   on(watchlistCreateDone, (state) => ({ ...state, loading: false, error: "" })),
 
-  on(watchlistCreateError, (state, { error }) => ({ ...state, loading: false, error }))
+  on(watchlistCreateError, (state, { error }) => ({ ...state, loading: false, error })),
+
+  on(setSelectedWatchlist, (state, { watchlist }) => ({ ...state, watchlist }))
 );

@@ -10,6 +10,8 @@ export enum WATCHLIST_ACTION_TYPES {
   WATCHLIST_CREATE_INITIALIZED = "WATCHLIST_CREATE_INITIALIZED",
   WATCHLIST_CREATE_DONE = "WATCHLIST_CREATE_DONE",
   WATCHLIST_CREATE_ERROR = "WATCHLIST_CREATE_ERROR",
+
+  WATCHLIST_SET_SELECTED = "WATCHLIST_SET_SELECTED",
 }
 
 export const watchlistInitialized = createAction(
@@ -17,7 +19,7 @@ export const watchlistInitialized = createAction(
   props<{ userId: string }>()
 );
 
-export const watchlistDone = createAction(WATCHLIST_ACTION_TYPES.WATCHLIST_DONE, props<{ watchlist: Watchlist[] }>());
+export const watchlistDone = createAction(WATCHLIST_ACTION_TYPES.WATCHLIST_DONE, props<{ watchlists: Watchlist[] }>());
 
 export const watchlistError = createAction(WATCHLIST_ACTION_TYPES.WATCHLIST_ERROR, props<{ error: string }>());
 
@@ -31,4 +33,9 @@ export const watchlistCreateDone = createAction(WATCHLIST_ACTION_TYPES.WATCHLIST
 export const watchlistCreateError = createAction(
   WATCHLIST_ACTION_TYPES.WATCHLIST_CREATE_ERROR,
   props<{ error: string }>()
+);
+
+export const setSelectedWatchlist = createAction(
+  WATCHLIST_ACTION_TYPES.WATCHLIST_SET_SELECTED,
+  props<{ watchlist?: Watchlist }>()
 );

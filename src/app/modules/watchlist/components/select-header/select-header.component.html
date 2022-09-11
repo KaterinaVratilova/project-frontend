@@ -5,42 +5,48 @@
   </div>
 
   <ul *ngIf="selectOpen">
-    <li>
-      <a href="#">All watchlist</a>
-    </li>
-    <li>
-      <a href="#"
-        >Recently invested
-        <span class="material-symbols-outlined"> check </span>
+    <li *ngFor="let option of options">
+      <a [routerLink]="option.url" (click)="onToggle()">
+        {{ option.label }}
+        <span *ngIf="option.id === selected?.id" class="material-symbols-outlined"> check </span>
       </a>
     </li>
-    <li>
-      <a href="#">Food</a>
-    </li>
-    <li>
-      <a href="#">Energy</a>
-    </li>
-    <li>
-      <a href="#">Games</a>
-    </li>
-    <li>
-      <a href="#">Current candidates</a>
-    </li>
-    <li>
-      <a href="#">Etf</a>
-    </li>
-    <li>
-      <a href="#">Index</a>
-    </li>
-    <li>
-      <a href="#">Europe</a>
-    </li>
-    <li>
-      <a href="#">Trading</a>
-    </li>
-    <li>
-      <a href="#">Test</a>
-    </li>
+    <!--    <li>-->
+    <!--      <a href="#">All watchlist</a>-->
+    <!--    </li>-->
+    <!--    <li>-->
+    <!--      <a href="#"-->
+    <!--        >Recently invested-->
+    <!--        <span class="material-symbols-outlined"> check </span>-->
+    <!--      </a>-->
+    <!--    </li>-->
+    <!--    <li>-->
+    <!--      <a href="#">Food</a>-->
+    <!--    </li>-->
+    <!--    <li>-->
+    <!--      <a href="#">Energy</a>-->
+    <!--    </li>-->
+    <!--    <li>-->
+    <!--      <a href="#">Games</a>-->
+    <!--    </li>-->
+    <!--    <li>-->
+    <!--      <a href="#">Current candidates</a>-->
+    <!--    </li>-->
+    <!--    <li>-->
+    <!--      <a href="#">Etf</a>-->
+    <!--    </li>-->
+    <!--    <li>-->
+    <!--      <a href="#">Index</a>-->
+    <!--    </li>-->
+    <!--    <li>-->
+    <!--      <a href="#">Europe</a>-->
+    <!--    </li>-->
+    <!--    <li>-->
+    <!--      <a href="#">Trading</a>-->
+    <!--    </li>-->
+    <!--    <li>-->
+    <!--      <a href="#">Test</a>-->
+    <!--    </li>-->
 
     <li class="create-wishlist" (click)="onCreateWatchlist()">
       <span class="material-symbols-outlined"> create_new_folder </span>
