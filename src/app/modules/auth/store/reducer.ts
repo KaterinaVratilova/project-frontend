@@ -38,6 +38,7 @@ export const authReducer = createReducer(
     setAuthState(newState);
     return newState;
   }),
+
   on(loginInitialized, (state) => {
     const newState = { ...state, loading: true, error: "" };
     setAuthState(newState);
@@ -52,18 +53,19 @@ export const authReducer = createReducer(
 
   on(loginError, (state, { error }) => {
     const newState = { ...state, loading: false, error };
-    setAuthState(newState)
+    setAuthState(newState);
     return newState;
   }),
+
   on(registerError, (state, { error }) => {
     const newState = { ...state, loading: false, error };
-    setAuthState(newState)
+    setAuthState(newState);
     return newState;
   }),
 
   on(loginDone, (state, { response }) => {
-    const newState = { ...state, ...response };
-    setAuthState(newState)
+    const newState = { ...state, ...response, loading: false, error: "" };
+    setAuthState(newState);
     return newState;
   })
 );

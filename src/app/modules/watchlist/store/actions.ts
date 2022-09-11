@@ -28,4 +28,7 @@ export const watchlistCreateInitialized = createAction(
 
 export const watchlistCreateDone = createAction(WATCHLIST_ACTION_TYPES.WATCHLIST_CREATE_DONE);
 
-export const watchlistCreateError = createAction(WATCHLIST_ACTION_TYPES.WATCHLIST_CREATE_ERROR, props<{ error: string }>());
+export const watchlistCreateError = createAction(
+  WATCHLIST_ACTION_TYPES.WATCHLIST_CREATE_ERROR,
+  props<{ error: string }>()
+);

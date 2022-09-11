@@ -6,11 +6,12 @@ import { AppState } from "../../../../app.module";
 import { watchlistCreateInitialized, watchlistInitialized } from "../../store/actions";
 import { selectUser } from "../../../auth/store/selectors";
 
-const wait = (time: number) => new Promise((resolve) => {
-  setTimeout(() => {
-    resolve("done");
-  }, time);
-});
+const wait = (time: number) =>
+  new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("done");
+    }, time);
+  });
 
 @Component({
   selector: "app-watchlist",

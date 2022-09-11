@@ -43,12 +43,10 @@ export class MenuComplementaryComponent {
     },
   ];
 
-  constructor(private router: Router) {
-  }
+  constructor(private router: Router) {}
 
   onLogout() {
     localStorage.clear();
     this.router.navigate(["logout"]);
   }
-
 }

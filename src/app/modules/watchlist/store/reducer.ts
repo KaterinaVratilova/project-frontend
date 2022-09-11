@@ -2,11 +2,12 @@ import { createReducer, on } from "@ngrx/store";
 
 import { Watchlist } from "../services/watchlist.service";
 import {
-  watchlistCreateDone, watchlistCreateError,
+  watchlistCreateDone,
+  watchlistCreateError,
   watchlistCreateInitialized,
   watchlistDone,
   watchlistError,
-  watchlistInitialized
+  watchlistInitialized,
 } from "./actions";
 
 export type WatchlistState = {
@@ -31,5 +32,5 @@ export const watchlistReducer = createReducer(
 
   on(watchlistCreateDone, (state) => ({ ...state, loading: false, error: "" })),
 
-  on(watchlistCreateError, (state, { error }) => ({ ...state, loading: false, error })),
+  on(watchlistCreateError, (state, { error }) => ({ ...state, loading: false, error }))
 );

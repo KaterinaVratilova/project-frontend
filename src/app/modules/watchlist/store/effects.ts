@@ -4,11 +4,12 @@ import { catchError, map, of, switchMap } from "rxjs";
 
 import { WatchlistService } from "../services/watchlist.service";
 import {
-  watchlistCreateDone, watchlistCreateError,
+  watchlistCreateDone,
+  watchlistCreateError,
   watchlistCreateInitialized,
   watchlistDone,
   watchlistError,
-  watchlistInitialized
+  watchlistInitialized,
 } from "./actions";
 
 @Injectable()

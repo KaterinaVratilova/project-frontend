@@ -1,10 +1,9 @@
 import { ChangeDetectionStrategy, Component } from "@angular/core";
-import { FormBuilder, FormControl, FormGroup, NonNullableFormBuilder, Validators } from "@angular/forms";
+import { FormControl, FormGroup, NonNullableFormBuilder, Validators } from "@angular/forms";
 import { Store } from "@ngrx/store";
 
 import { AppState } from "../../../../app.module";
 import { loginInitialized } from "../../store/actions";
-import { LoginRequest } from "../../request";
 import { selectError } from "../../store/selectors";
 
 type LoginForm = {

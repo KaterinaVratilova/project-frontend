@@ -46,7 +46,7 @@ export class AuthEffect {
             return loginDone({ response });
           }),
           catchError((response: HttpErrorResponse) => {
-            if (response.error.code === "BAD_CREDENTIALS") {
+            if (response.error?.code === "BAD_CREDENTIALS") {
               return of(loginError({ error: response.error.code }));
             }
 
