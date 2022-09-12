@@ -13,8 +13,8 @@ import { ForgotPasswordComponent } from "./modules/auth/pages/forgot-password/fo
 import { NotFoundComponent } from "./modules/common/pages/not-found/not-found.component";
 import { GeneralComponent } from "./modules/settings/pages/general/general.component";
 import { LogoutComponent } from "./modules/auth/pages/logout/logout.component";
-import { ApplicationGuard } from "./modules/auth/guards/application.guard";
 import { AuthGuard } from "./modules/auth/guards/auth.guard";
+import { ApplicationGuard } from "./modules/auth/guards/application.guard";
 
 const routes: Routes = [
   {
