@@ -10,8 +10,8 @@ export class ApplicationGuard implements CanActivate {
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     const hasToken = this.jwtTokenService.get();
 
-    if (hasToken) {
-      this.router.navigateByUrl("/home");
+    if (!hasToken) {
+      this.router.navigateByUrl("/login");
       return false;
     }
 
