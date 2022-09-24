@@ -7,6 +7,10 @@
 
   <h1>{{ (selectedWatchlist | async) || "NONE" }}</h1>
 
+  <div class="list">
+    <app-watchlist-card></app-watchlist-card>
+  </div>
+
   <app-create-wishlist-modal
     *ngIf="modalOpen"
     (outSubmit)="onSubmit($event)"
