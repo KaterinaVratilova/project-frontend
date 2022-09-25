@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component } from "@angular/core";
+import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, ViewChild } from "@angular/core";
+import { fromEvent } from "rxjs";
 
 @Component({
   selector: "app-observables",
@@ -6,6 +7,13 @@ import { ChangeDetectionStrategy, Component } from "@angular/core";
   templateUrl: "observables.component.html",
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ObservablesComponent {
+export class ObservablesComponent implements AfterViewInit {
+  @ViewChild('btn') button!: ElementRef<HTMLButtonElement>;
 
+  ngAfterViewInit() {
+    fromEvent(this.button.nativeElement, "click")
+      .subscribe(() => {
+        console.log("I clicked on the button");
+      });
+  }
 }
