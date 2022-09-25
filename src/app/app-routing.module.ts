@@ -15,12 +15,17 @@ import { GeneralComponent } from "./modules/settings/pages/general/general.compo
 import { LogoutComponent } from "./modules/auth/pages/logout/logout.component";
 import { AuthGuard } from "./modules/auth/guards/auth.guard";
 import { ApplicationGuard } from "./modules/auth/guards/application.guard";
+import { ObservablesComponent } from "./modules/common/pages/observables/observables.component";
 
 const routes: Routes = [
   {
     path: "",
     pathMatch: "full",
     redirectTo: "login",
+  },
+  {
+    path: "observables",
+    component: ObservablesComponent,
   },
   {
     path: "",
