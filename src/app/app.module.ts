@@ -21,6 +21,7 @@ import { SettingsModule } from "./modules/settings/settings.module";
 import { CommonModule } from "./modules/common/common.module";
 import { WatchlistEffect } from "./modules/watchlist/store/effects";
 import { AuthInterceptor } from "./modules/common/interceptors/auth.interceptor";
+import { AssetsModule } from "./modules/assets/assets.module";
 
 export type AppState = {
   layouts: LayoutsState;
@@ -41,6 +42,7 @@ export type AppState = {
     PortfolioModule,
     SettingsModule,
     CommonModule,
+    AssetsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

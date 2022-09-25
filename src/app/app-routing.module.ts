@@ -30,7 +30,7 @@ const routes: Routes = [
   {
     path: "",
     component: AuthLayoutComponent,
-    // canActivate: [ApplicationGuard],
+    canActivate: [ApplicationGuard],
     children: [
       {
         path: "portfolio",
@@ -69,7 +69,7 @@ const routes: Routes = [
   {
     path: "",
     component: LayoutComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     children: [
       {
         path: "login",

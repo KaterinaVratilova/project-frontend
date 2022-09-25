@@ -1,5 +1,16 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, ViewChild } from "@angular/core";
-import { fromEvent } from "rxjs";
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy, ChangeDetectorRef,
+  Component,
+  ElementRef,
+  OnDestroy,
+  OnInit,
+  ViewChild
+} from "@angular/core";
+import { delay, exhaustMap, fromEvent, map, mergeAll, mergeMap, Observable, Subject, switchMap } from "rxjs";
+
+import { MockUserService } from "../../services/mock-user.service";
+import { User } from "../../../auth/types";
 
 @Component({
   selector: "app-observables",
@@ -10,10 +21,18 @@ import { fromEvent } from "rxjs";
 export class ObservablesComponent implements AfterViewInit {
   @ViewChild('btn') button!: ElementRef<HTMLButtonElement>;
 
+  // mergeMap, concatMap, switchMap, exhaustMap
+
+  constructor(private mockUserService: MockUserService) {
+  }
+
   ngAfterViewInit() {
     fromEvent(this.button.nativeElement, "click")
-      .subscribe(() => {
-        console.log("I clicked on the button");
+      .pipe(
+        exhaustMap(() => this.mockUserService.get()),
+      )
+      .subscribe((data) => {
+        console.log("I clicked on the button", data);
       });
   }
 }

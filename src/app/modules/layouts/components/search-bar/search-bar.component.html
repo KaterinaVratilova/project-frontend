@@ -1,7 +1,19 @@
 <div class="top-bar">
   <div class="top">
     <div class="input">
-      <app-search-input></app-search-input>
+      <app-search-input (outKeyDown)="onSearch($event)">
+        <ng-container *ngIf="assets">
+          <div *ngIf="assets.length === 0; else listAssets">
+            Nic jsem nenasel
+          </div>
+
+          <ng-template #listAssets>
+            <ul>
+              <li *ngFor="let asset of assets">{{asset.name}}</li>
+            </ul>
+          </ng-template>
+        </ng-container>
+      </app-search-input>
     </div>
 
     <span class="material-symbols-outlined"> notifications </span>

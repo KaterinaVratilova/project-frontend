@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from "@angular/core";
+import { ChangeDetectionStrategy, Component, EventEmitter, Output } from "@angular/core";
 
 @Component({
   selector: "app-search-input",
@@ -6,4 +6,14 @@ import { ChangeDetectionStrategy, Component } from "@angular/core";
   styleUrls: ["search-input.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SearchInputComponent {}
+export class SearchInputComponent {
+
+  @Output() outKeyDown = new EventEmitter<string>();
+
+  onKeyDown(event: KeyboardEvent) {
+    const { value } = event.target as HTMLInputElement;
+
+    this.outKeyDown.emit(value || "");
+  }
+
+}

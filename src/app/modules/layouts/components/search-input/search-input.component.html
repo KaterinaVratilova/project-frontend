@@ -1,5 +1,7 @@
 <div class="input-wrapper">
   <span class="material-symbols-outlined"> search </span>
 
-  <input type="text" placeholder="Search" />
+  <input type="text" placeholder="Search" (keyup)="onKeyDown($event)" />
+
+  <ng-content></ng-content>
 </div>
