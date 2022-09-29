@@ -3,9 +3,7 @@ import { HttpClient } from "@angular/common/http";
 
 @Injectable({ providedIn: "root" })
 export class MockUserService {
-
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) {}
 
   get() {
     return this.http.get("http://localhost:3000/users");

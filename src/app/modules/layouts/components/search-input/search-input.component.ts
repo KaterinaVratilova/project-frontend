@@ -7,7 +7,6 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Output } from "@angul
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchInputComponent {
-
   @Output() outKeyDown = new EventEmitter<string>();
 
   onKeyDown(event: KeyboardEvent) {
@@ -15,5 +14,4 @@ export class SearchInputComponent {
 
     this.outKeyDown.emit(value || "");
   }
-
 }

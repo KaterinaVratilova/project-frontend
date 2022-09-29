@@ -13,7 +13,13 @@ import { CreateWatchlistModalComponent } from "./components/create-watchlist-mod
 import { WatchlistCardComponent } from "./components/watchlist-card/watchlist-card.component";
 
 @NgModule({
-  declarations: [WatchlistComponent, WatchlistCardComponent, TopBarComponent, SelectHeaderComponent, CreateWatchlistModalComponent],
+  declarations: [
+    WatchlistComponent,
+    WatchlistCardComponent,
+    TopBarComponent,
+    SelectHeaderComponent,
+    CreateWatchlistModalComponent,
+  ],
   imports: [CommonModule, HttpClientModule, SharedModule, ReactiveFormsModule, RouterModule],
   providers: [WatchlistService],
 })

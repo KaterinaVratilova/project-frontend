@@ -6,5 +6,4 @@ import { NgModule } from "@angular/core";
   declarations: [],
   providers: [],
 })
-export class AssetsModule {
-}
+export class AssetsModule {}

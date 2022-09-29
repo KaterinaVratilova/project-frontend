@@ -1,5 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from
-    "@angular/core";
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from "@angular/core";
 import { debounceTime, distinctUntilChanged, Subject, switchMap, takeUntil, tap } from "rxjs";
 
 import { AssetsService } from "../../../assets/services/assets.service";
@@ -11,18 +10,17 @@ import { AssetsService } from "../../../assets/services/assets.service";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchBarComponent implements OnInit, OnDestroy {
-
   private searchSubject = new Subject<string>();
 
   private unsrubscribe = new Subject();
 
   assets?: any[];
 
-  constructor(private assetsService: AssetsService, private cd: ChangeDetectorRef) {
-  }
+  constructor(private assetsService: AssetsService, private cd: ChangeDetectorRef) {}
 
   ngOnInit(): void {
-    this.searchSubject.asObservable()
+    this.searchSubject
+      .asObservable()
       .pipe(
         takeUntil(this.unsrubscribe),
         debounceTime(1000),
@@ -33,8 +31,9 @@ export class SearchBarComponent implements OnInit, OnDestroy {
         tap((assets: any) => {
           this.assets = assets.content;
           this.cd.markForCheck();
-        }),
-      ).subscribe();
+        })
+      )
+      .subscribe();
   }
 
   onSearch(search: string) {

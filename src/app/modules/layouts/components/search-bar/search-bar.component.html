@@ -3,13 +3,11 @@
     <div class="input">
       <app-search-input (outKeyDown)="onSearch($event)">
         <ng-container *ngIf="assets">
-          <div *ngIf="assets.length === 0; else listAssets">
-            Nic jsem nenasel
-          </div>
+          <div *ngIf="assets.length === 0; else listAssets">Nic jsem nenasel</div>
 
           <ng-template #listAssets>
             <ul>
-              <li *ngFor="let asset of assets">{{asset.name}}</li>
+              <li *ngFor="let asset of assets">{{ asset.name }}</li>
             </ul>
           </ng-template>
         </ng-container>

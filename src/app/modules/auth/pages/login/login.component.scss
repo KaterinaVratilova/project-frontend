@@ -22,7 +22,6 @@ app-checkbox {
 }
 
 .social-buttons {
-  white-space: nowrap;
 
   img {
     height: 20px;
@@ -37,6 +36,7 @@ app-checkbox {
   }
 
   span {
+    white-space: nowrap;
     min-width: 45%;
     text-align: start;
     vertical-align: middle;
