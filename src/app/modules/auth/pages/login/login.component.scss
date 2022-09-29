@@ -1,6 +1,7 @@
 :host {
   flex: 1;
   display: flex;
+  align-items: stretch;
 }
 
 .login {
@@ -8,6 +9,8 @@
   padding-left: 30px;
   padding-right: 30px;
   padding-top: 15px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 app-checkbox {
@@ -19,6 +22,8 @@ app-checkbox {
 }
 
 .social-buttons {
+  white-space: nowrap;
+
   img {
     height: 20px;
     width: 18px;
@@ -56,14 +61,25 @@ a {
   cursor: pointer;
 }
 
-@media (min-width: 1023px) {
+.error {
+  color: #ee2614;
+  font-size: 12px;
+  margin-top: 5px;
+
+  a {
+    pointer-events: all;
+    margin-left: 0.5rem;
+    color: #0079b9;
+  }
+}
+
+@media (min-width: 768px) {
   :host {
     align-items: center;
   }
 
   .login {
     width: 500px;
-    margin: 0 auto;
     box-shadow: 0 1px 1px 0 rgb(0 0 0 / 20%);
     border-top: 1px solid #e4e4e4;
     padding-left: 50px;
@@ -82,17 +98,5 @@ a {
     text-align: center;
     color: var(--neutral-90);
     padding: 40px 50px 30px 50px;
-  }
-}
-
-.error {
-  color: #ee2614;
-  font-size: 12px;
-  margin-top: 5px;
-
-  a {
-    pointer-events: all;
-    margin-left: 0.5rem;
-    color: #0079b9;
   }
 }
